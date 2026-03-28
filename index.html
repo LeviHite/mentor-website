@@ -1,0 +1,1593 @@
+
+to build the mentor website
+
+12:40 PM
+
+Architected comprehensive marketing website with dark design and gold accents
+Architected comprehensive marketing website with dark design and gold accents
+Got it — picking up where we left off. Building the full Mentor marketing website now: dark editorial, gold accents, multiple sections, app mockup previews, pricing, everything.
+
+
+Created a file, read a file
+Created a file, read a file
+Here's the full Mentor marketing website. Here's what's included:
+
+Sections
+
+Fixed nav with smooth scroll
+Hero with two floating phone mockups showing the actual app UI
+Scrolling feature marquee
+6-feature grid (mentorship, Bible study, prayer, journal, church groups, growth tracking)
+4-step "How It Works"
+Audience cards for Churches, Camps, Schools
+Scripture pull-quote (Proverbs 27:17)
+3-tier pricing (Free / Pro $4.99 / Church $29)
+3 testimonial cards
+CTA section
+Footer with links and a footer verse
+Design
+
+Dark near-black background, gold/amber accents, Cormorant Garamond serif headers
+Scroll reveal animations, floating phone animation, marquee
+Fully responsive for mobile
+A few things you'll likely want to update: replace the placeholder email (hello@mentorapp.com), add the real app URL to the CTA buttons, and swap in real testimonials when you have them. Want me to adjust any section, colors, copy, or layout?
+
+Mentor website
+Code · HTML 
+how can i make the website up and running and where do i edit it?
+
+2:03 PM
+
+Weighed deployment options and editing workflows for website
+Weighed deployment options and editing workflows for website
+Since it's a single HTML file, the simplest path is a dedicated GitHub repo deployed to Vercel — same workflow you already know from the app.
+
+Step 1 — Create a GitHub repo
+
+Go to github.com → New repository → name it mentor-website → create it (public or private, your call).
+
+Step 2 — Add the file
+
+In the new repo, click "Add file" → "Create new file". Name it index.html, then paste the full HTML from the artifact you downloaded. Commit it.
+
+Step 3 — Deploy on Vercel
+
+Go to vercel.com → New Project
+Import your mentor-website GitHub repo
+Vercel will auto-detect it as a static site — no build settings needed, just hit Deploy
+It'll give you a live URL like mentor-website.vercel.app in about 30 seconds
+Step 4 — Connect a custom domain (optional)
+
+Once it's live, go to Project Settings → Domains in Vercel and add whatever domain you land on (e.g. getmentor.app or mentorapp.com). Point the DNS to Vercel from Cloudflare the same way you did for the app.
+
+Where to edit it
+
+Since it's one HTML file, you have two options:
+
+GitHub web editor — click index.html in the repo → pencil icon to edit → commit. Vercel auto-redeploys in ~20 seconds. Good for quick copy/text changes.
+Cursor — clone the repo locally (git clone ...), open the folder in Cursor, edit index.html, then push. Better for layout or design changes where you want to see a live preview.
+For a live preview while editing locally, just open index.html directly in your browser — no server needed since it's plain HTML.
+
+Want me to convert it into a proper React/Vite project instead so you can add multiple pages with routing later?
+
+where do i edit it?
+
+2:04 PM
+
+Identified user's need for direct editing guidance
+Identified user's need for direct editing guidance
+The easiest place is the GitHub web editor since you already use it for your backend:
+
+Go to your mentor-website repo on GitHub
+Click index.html
+Click the pencil icon (top right of the file)
+Make your changes
+Click Commit changes
+Vercel will automatically redeploy in about 20 seconds every time you commit.
+
+That's it. All the text, colors, and layout are in that one file, so everything you'd want to change is right there.
+
+welll visauly how can i do it
+
+2:05 PM
+
+Weighed visual editing options for website modification
+Weighed visual editing options for website modification
+For a true visual editor with your existing file, the best options are:
+
+Option 1 — Framer (recommended) Framer is a visual website builder where you can drag, click, and edit everything without touching code. You'd rebuild the site there (it's fast with AI help) and it handles hosting too. Goes live at a custom domain. This is the most "visual" experience possible. → framer.com
+
+Option 2 — Cursor with Live Preview If you want to keep the HTML file:
+
+Open the mentor-website folder in Cursor
+Open index.html in the browser side-by-side
+As you edit in Cursor, hit save and refresh to see changes instantly
+Not drag-and-drop, but you can ask Cursor in plain English — "make the hero text bigger" or "change the gold color to green" — and it writes the code for you.
+
+Option 3 — Browser DevTools (for quick experiments)
+
+Open the site in Chrome
+Right-click anything → Inspect
+Double-click text to edit it live
+Tweak colors, spacing, fonts in real time
+The catch: nothing saves — it's just for experimenting before you copy the change into the real file.
+
+Honestly, if you want the most polished result with the least friction, Framer is the move. Want me to help you plan how to rebuild the Mentor site in Framer?
+
+best long term plan?
+
+2:06 PM
+
+Synthesized SaaS strategy and formulated comprehensive recommendation
+Synthesized SaaS strategy and formulated comprehensive recommendation
+For a SaaS product targeting churches and camps, here's the honest long-term plan:
+
+Build it in React + Vite — same stack as your app.
+
+Here's why and how:
+
+Why React is the right call
+
+You already know it from building the app
+You can add pages (About, Blog, Docs, Contact) with React Router later without rebuilding everything
+You can embed live app previews or interactive demos
+Same Vercel deployment workflow you already use
+Easy to hand off to someone else or a design agency later
+The setup (one time)
+
+Create a mentor-website repo on GitHub
+Run npm create vite@latest mentor-website -- --template react locally in Cursor
+Build out pages as separate components
+Deploy to Vercel → connect your custom domain
+Where you edit it long-term
+
+Cursor is the answer. You describe what you want in plain English and it writes the code. For a marketing site you're mostly changing text, colors, and layout — Cursor handles all of that conversationally. You barely touch raw code.
+
+The domain
+
+Get something like getmentor.app or mentorapp.com now before someone else does. Register it through Cloudflare Registrar (~$10/yr) and point it to Vercel.
+
+Short version: React in Cursor, deployed on Vercel, on your own domain. Want me to scaffold out the full React site right now so you can paste it into Cursor and go?
+
+what about a google route?
+
+2:10 PM
+
+Inferred user meant Google Sites for website hosting
+Inferred user meant Google Sites for website hosting
+Google Sites is probably what you're thinking of — here's the honest take:
+
+What it is
+
+A free, drag-and-drop website builder built into Google. No code, no hosting setup, goes live instantly at a sites.google.com/... URL or a custom domain.
+
+Pros
+
+Completely visual — point, click, drag
+Free
+Zero setup or deployment
+You already have a Google account
+Custom domain support
+Cons
+
+Looks generic — hard to make it look as polished as what we built
+Very limited design control (no custom fonts, animations, or layout freedom)
+Not taken as seriously by investors or enterprise clients like churches and camps
+You'd essentially be starting over from scratch
+Not scalable — when you want a blog, pricing page, or interactive demo you hit a wall fast
+Honest verdict
+
+Google Sites is great for internal company wikis or simple info pages. For a SaaS product you're trying to sell to organizations and eventually raise money around, it'll undercut your credibility. First impressions matter and the Mentor brand deserves better than a Google Sites template.
+
+The move
+
+If you want visual editing without code, Framer is the Google Sites alternative that actually looks professional. You get drag-and-drop but with full design freedom.
+
+If you're comfortable with Cursor, React is still the best long-term play.
+
+Which direction feels right to you — Framer or React?
+
+cursor has limits for each month and i used it already so im trying to build the website now and not use cursor
+
+2:14 PM
+
+Weighed alternative tools for building website independently
+Weighed alternative tools for building website independently
+Good news — you already have the full website built. Here's how to get it live right now without Cursor:
+
+The plan: use the HTML file we just made
+
+Go to github.com → create a new repo called mentor-website
+Click "Add file" → "Create new file"
+Name it index.html
+Download the HTML file from this chat and paste the entire thing in
+Commit it
+Go to vercel.com → New Project → import that repo → Deploy
+Done. Live in under 5 minutes.
+
+For editing without Cursor
+
+The GitHub web editor is all you need for text changes:
+
+Click index.html in the repo → pencil icon → edit → commit
+Vercel redeploys automatically in ~20 seconds
+For anything more visual, just describe what you want to change here in this chat and I'll give you the exact line to swap out in the file. That's essentially free "Cursor" with no monthly limit.
+
+When Cursor resets
+
+Come back to it for bigger feature work on the actual app. The website is simple enough that GitHub editor + Claude is plenty.
+
+Want me to walk you through the GitHub + Vercel setup step by step right now?
+
+how do i get my own domain name
+
+2:35 PM
+
+Recognized straightforward query and prepared direct guidance
+Recognized straightforward query and prepared direct guidance
+Cloudflare Registrar is the best option — you already use Cloudflare for your app so everything stays in one place.
+
+Steps
+
+Go to dash.cloudflare.com
+On the left sidebar click Domain Registration → Register Domains
+Search for names you want — some ideas:
+mentorapp.com
+getmentor.app
+usementor.com
+mentordiscipleship.com
+Pick one (~$10–15/yr) and purchase it
+It shows up in your Cloudflare dashboard automatically
+Then connect it to Vercel
+
+In Vercel → your mentor-website project → Settings → Domains → add your domain
+Vercel gives you two DNS records to add
+Go back to Cloudflare → your domain → DNS → add those records
+Takes 1–5 minutes to go live
+What to look for in a name
+
+.com is still king for credibility with churches and organizations
+Short and memorable
+Easy to say out loud ("go to mentor app dot com")
+Check availability at cloudflare.com before you get attached to a name. What names are you considering?
+
+what about cloudflare
+
+2:40 PM
+
+Synthesized Cloudflare's domain and hosting capabilities
+Synthesized Cloudflare's domain and hosting capabilities
+Cloudflare does everything you need — domain AND hosting. Here's the full picture:
+
+Cloudflare Registrar (domain)
+
+Buy your domain right there in your existing Cloudflare account
+At-cost pricing, no markup — cheapest place to register
+DNS is automatically managed since it's all in one place
+Cloudflare Pages (hosting)
+
+Free static site hosting — similar to Vercel but built into Cloudflare
+Connect your GitHub repo, it auto-deploys on every commit
+Your custom domain connects in one click since the DNS is already there
+No separate Vercel account needed
+Why this is actually the cleanest setup for you
+
+You already use Cloudflare for:
+
+R2 image storage (your app)
+DNS for your backend
+Adding your domain and website there means everything — domain, DNS, storage, and hosting — lives in one dashboard. No jumping between Vercel and Cloudflare to update DNS records.
+
+How to set it up
+
+Buy your domain in Cloudflare Registrar
+Go to Workers & Pages → Create → Pages → connect your GitHub repo
+Select mentor-website, hit Deploy
+Go to your Pages project → Custom Domains → add your domain — done in one click
+Want to go this route?
+
+shouldnt i register with a domain tho
+
+2:42 PM
+
+Validated domain registration as essential prerequisite step
+Validated domain registration as essential prerequisite step
+Yes — that's step one. You can't use a custom domain until you own it.
+
+The order is:
+
+Register the domain in Cloudflare Registrar (buy it, ~$10/yr)
+Deploy the site on Cloudflare Pages (free)
+Connect the domain to your Pages site (one click since DNS is already in Cloudflare)
+So go to dash.cloudflare.com right now, hit Domain Registration → Register Domains, and search for the name you want. What names are you thinking?
+
+i own mentordiscipleship.com
+
+2:48 PM
+
+Identified domain ownership and charted next steps forward
+Identified domain ownership and charted next steps forward
+Perfect — that's a solid domain. Here's exactly what to do next:
+
+Step 1 — Deploy the site on Cloudflare Pages
+
+Go to dash.cloudflare.com
+Click Workers & Pages → Create → Pages
+Connect your GitHub account → select your mentor-website repo
+Leave all build settings blank (it's plain HTML, no build needed)
+Hit Deploy
+Step 2 — Connect mentordiscipleship.com
+
+Go to your Pages project → Custom Domains tab
+Click Set up a custom domain
+Type in mentordiscipleship.com
+Since your domain is already in Cloudflare, it connects automatically — no manual DNS records needed
+Live within a few minutes
+That's it. Your site will be at mentordiscipleship.com and every time you edit index.html on GitHub and commit, it redeploys automatically.
+
+Do you have the mentor-website GitHub repo set up yet, or do you need to do that part first?
+
+okay how do i set up the website
+
+7:10 PM
+
+Assessed user's resources for website deployment
+Assessed user's resources for website deployment
+Here's the full step by step:
+
+Step 1 — Create the GitHub repo
+
+Go to github.com → click the + icon top right → New repository
+Name it mentor-website
+Leave everything else default → click Create repository
+Step 2 — Add the HTML file
+
+In the new repo click Add file → Create new file
+Name it index.html
+Go back to this chat → download the mentor-website.html file → open it → copy everything
+Paste it into the GitHub editor
+Click Commit changes
+Step 3 — Deploy on Cloudflare Pages
+
+Go to dash.cloudflare.com
+Click Workers & Pages → Create → Pages
+Click Connect to Git → authorize GitHub → select mentor-website
+Leave all build settings blank
+Click Save and Deploy
+Step 4 — Connect your domain
+
+Inside your Pages project → click Custom Domains
+Click Set up a custom domain
+Enter mentordiscipleship.com
+Cloudflare handles the DNS automatically since you own the domain there
+Wait 2–5 minutes → it's live
+Start with Step 1 and let me know when you hit a snag.
+
+Screenshot 2026-03-27 at 7.15.20 PM.png
+7:15 PM
+
+Identified repository setup and next file creation step
+Identified repository setup and next file creation step
+Repo is created. Now add the HTML file:
+
+Click "creating a new file" (the blue link in the middle of the page)
+Name it index.html at the top
+Go back to this chat → click the download button on the mentor-website file above → open it in a text editor → select all → copy
+Paste everything into the GitHub editor
+Click Commit changes → Commit changes again
+Let me know once that's done and we'll move to Cloudflare Pages.
+
+
+
+
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+Mentor website · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentor — Walk Together in Faith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+ 
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+:root {
+  --black:    #070709;
+  --deep:     #0d0d14;
+  --surface:  #111120;
+  --card:     #16162a;
+  --border:   rgba(255,255,255,0.07);
+  --border2:  rgba(255,255,255,0.12);
+  --gold:     #c9a84c;
+  --gold-lt:  #e8c97a;
+  --gold-dk:  #8f6e24;
+  --gold-glow:rgba(201,168,76,0.18);
+  --green:    #3d9e60;
+  --white:    #f5f0e8;
+  --muted:    rgba(245,240,232,0.5);
+  --muted2:   rgba(245,240,232,0.28);
+}
+ 
+html { scroll-behavior: smooth; font-size: 16px; }
+ 
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+/* NOISE */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999; opacity: 0.55;
+}
+ 
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 70px;
+  background: rgba(7,7,9,0.82);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
+}
+ 
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700; font-size: 1.55rem;
+  letter-spacing: 0.05em; color: var(--white);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 10px;
+}
+ 
+.nav-logo-mark {
+  width: 30px; height: 30px; border-radius: 8px;
+  background: linear-gradient(135deg, var(--gold-dk), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem; font-weight: 700; color: var(--black);
+}
+ 
+.nav-links {
+  display: flex; align-items: center; gap: 36px;
+  list-style: none;
+}
+ 
+.nav-links a {
+  color: var(--muted); text-decoration: none; font-size: 0.85rem;
+  font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+ 
+.nav-cta {
+  background: var(--gold); color: var(--black) !important;
+  padding: 9px 22px; border-radius: 6px;
+  font-weight: 600 !important; color: var(--black) !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.nav-cta:hover { background: var(--gold-lt) !important; transform: translateY(-1px); }
+ 
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 100px 48px 80px;
+  position: relative; overflow: hidden;
+}
+ 
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 50%, rgba(201,168,76,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 80% 20%, rgba(61,158,96,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 60% at 10% 80%, rgba(201,168,76,0.04) 0%, transparent 50%);
+}
+ 
+.hero-grid-lines {
+  position: absolute; inset: 0; z-index: 0; opacity: 0.035;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+ 
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 80px; width: 100%;
+}
+ 
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 5px 14px; border-radius: 100px;
+  margin-bottom: 28px;
+}
+ 
+.hero-eyebrow span { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+ 
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
+  font-weight: 600; line-height: 1.05;
+  letter-spacing: -0.01em; margin-bottom: 24px;
+}
+ 
+h1 em {
+  font-style: italic; color: var(--gold);
+}
+ 
+.hero-sub {
+  font-size: 1.05rem; line-height: 1.7; color: var(--muted);
+  max-width: 420px; margin-bottom: 44px;
+}
+ 
+.hero-actions {
+  display: flex; align-items: center; gap: 16px;
+}
+ 
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold); color: var(--black);
+  padding: 14px 28px; border-radius: 8px;
+  font-weight: 600; font-size: 0.92rem; text-decoration: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 8px 32px rgba(201,168,76,0.25);
+}
+.btn-primary:hover {
+  background: var(--gold-lt); transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201,168,76,0.35);
+}
+ 
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--white); padding: 14px 24px;
+  border: 1px solid var(--border2); border-radius: 8px;
+  font-weight: 500; font-size: 0.92rem; text-decoration: none;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); transform: translateY(-2px); }
+ 
+.hero-trust {
+  margin-top: 44px; display: flex; align-items: center; gap: 20px;
+}
+ 
+.hero-trust-label { font-size: 0.78rem; color: var(--muted2); letter-spacing: 0.06em; text-transform: uppercase; }
+ 
+.hero-trust-orgs {
+  display: flex; gap: 12px;
+}
+ 
+.org-chip {
+  background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+  padding: 4px 12px; border-radius: 100px;
+  font-size: 0.75rem; color: var(--muted); letter-spacing: 0.03em;
+}
+ 
+/* PHONE MOCKUP */
+.hero-visual {
+  display: flex; justify-content: center; align-items: center;
+  position: relative;
+}
+ 
+.phone-outer {
+  position: relative;
+  width: 280px;
+  animation: float 5s ease-in-out infinite;
+}
+ 
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-18px) rotate(1deg); }
+}
+ 
+.phone-glow {
+  position: absolute; inset: -40px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+ 
+.phone-frame {
+  width: 280px; height: 570px;
+  background: #0d0d14;
+  border-radius: 38px;
+  border: 2px solid rgba(255,255,255,0.12);
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.5),
+    0 40px 80px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+  overflow: hidden; position: relative;
+}
+ 
+.phone-notch {
+  position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+  width: 80px; height: 24px; background: #070709; border-radius: 12px; z-index: 10;
+}
+ 
+.phone-screen {
+  width: 100%; height: 100%;
+  background: linear-gradient(160deg, #0f1a12 0%, #0a130d 100%);
+  padding: 54px 16px 20px;
+  overflow: hidden;
+}
+ 
+.app-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 18px;
+}
+ 
+.app-greeting { font-size: 0.6rem; color: rgba(245,240,232,0.4); margin-bottom: 2px; }
+.app-username { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--white); font-weight: 600; }
+ 
+.app-avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dk), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.6rem; font-weight: 700; color: var(--black);
+}
+ 
+.app-verse-card {
+  background: linear-gradient(135deg, rgba(61,158,96,0.25), rgba(61,158,96,0.1));
+  border: 1px solid rgba(61,158,96,0.3);
+  border-radius: 12px; padding: 12px; margin-bottom: 14px;
+}
+ 
+.verse-label { font-size: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; color: #3d9e60; margin-bottom: 5px; }
+.verse-text { font-family: 'Cormorant Garamond', serif; font-size: 0.72rem; line-height: 1.5; color: var(--white); font-style: italic; }
+.verse-ref { font-size: 0.5rem; color: rgba(245,240,232,0.4); margin-top: 4px; }
+ 
+.app-section-title { font-size: 0.55rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(245,240,232,0.4); margin-bottom: 8px; }
+ 
+.app-mentor-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 10px; margin-bottom: 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+ 
+.mentor-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+.mentor-info { flex: 1; }
+.mentor-name { font-size: 0.62rem; font-weight: 600; color: var(--white); }
+.mentor-status { font-size: 0.5rem; color: rgba(245,240,232,0.4); margin-top: 1px; }
+.mentor-badge { font-size: 0.48rem; color: var(--gold); border: 1px solid rgba(201,168,76,0.3); padding: 2px 6px; border-radius: 4px; }
+ 
+.app-quick-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px;
+}
+ 
+.quick-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px; padding: 8px;
+}
+ 
+.quick-icon { font-size: 0.85rem; margin-bottom: 3px; }
+.quick-label { font-size: 0.5rem; font-weight: 600; color: rgba(245,240,232,0.7); }
+.quick-val { font-size: 0.65rem; color: var(--gold); font-weight: 700; }
+ 
+.app-prayer-item {
+  display: flex; align-items: flex-start; gap: 7px;
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px; padding: 8px;
+}
+.prayer-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(201,168,76,0.6); margin-top: 3px; flex-shrink: 0; }
+.prayer-text { font-size: 0.52rem; color: rgba(245,240,232,0.65); line-height: 1.4; }
+ 
+.phone-second {
+  position: absolute;
+  width: 220px; height: 450px;
+  right: -100px; top: 60px;
+  background: #0d0d14;
+  border-radius: 30px;
+  border: 2px solid rgba(255,255,255,0.08);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+  overflow: hidden; opacity: 0.65;
+  transform: rotate(6deg);
+}
+ 
+.phone-second-screen {
+  width: 100%; height: 100%;
+  background: linear-gradient(160deg, #110f1a 0%, #0d0a14 100%);
+  padding: 42px 14px 16px;
+}
+ 
+.snd-header { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--white); font-weight: 600; margin-bottom: 12px; }
+ 
+.snd-study-card {
+  background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 10px; padding: 10px; margin-bottom: 8px;
+}
+.snd-study-tag { font-size: 0.48rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 4px; }
+.snd-study-title { font-family: 'Cormorant Garamond', serif; font-size: 0.75rem; color: var(--white); font-weight: 600; margin-bottom: 4px; }
+.snd-progress-bar { height: 3px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+.snd-progress-fill { height: 100%; width: 65%; background: var(--gold); border-radius: 2px; }
+ 
+.snd-members { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 8px; }
+.snd-member { width: 22px; height: 22px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); font-size: 0.48rem; font-weight: 700; display: flex; align-items: center; justify-content: center; color: var(--black); }
+ 
+/* MARQUEE */
+.marquee-section {
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 18px 0; overflow: hidden; position: relative;
+  background: rgba(255,255,255,0.015);
+}
+ 
+.marquee-track {
+  display: flex; gap: 0; white-space: nowrap;
+  animation: marquee 28s linear infinite;
+}
+ 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+ 
+.marquee-item {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 0 36px; font-size: 0.78rem; font-weight: 500;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--muted2);
+}
+ 
+.marquee-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); opacity: 0.6; }
+ 
+/* FEATURES */
+.section {
+  padding: 120px 48px;
+  max-width: 1200px; margin: 0 auto;
+}
+ 
+.section-full {
+  padding: 120px 48px;
+}
+ 
+.section-full .section-inner {
+  max-width: 1200px; margin: 0 auto;
+}
+ 
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 18px;
+}
+ 
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 600; line-height: 1.1;
+  letter-spacing: -0.01em; margin-bottom: 20px;
+}
+ 
+h2 em { font-style: italic; color: var(--gold); }
+ 
+.section-sub {
+  font-size: 1.05rem; line-height: 1.7; color: var(--muted);
+  max-width: 520px; margin-bottom: 64px;
+}
+ 
+/* FEATURE GRID */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  background: var(--border);
+}
+ 
+.feature-card {
+  background: var(--deep);
+  padding: 40px 36px;
+  transition: background 0.3s;
+  position: relative; overflow: hidden;
+}
+.feature-card:hover { background: var(--surface); }
+ 
+.feature-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.feature-card:hover::before { opacity: 1; }
+ 
+.feature-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--gold-glow); border: 1px solid rgba(201,168,76,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; margin-bottom: 24px;
+}
+ 
+.feature-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 600; margin-bottom: 12px;
+}
+ 
+.feature-card p { font-size: 0.9rem; line-height: 1.7; color: var(--muted); }
+ 
+/* HOW IT WORKS */
+.how-section {
+  background: var(--deep);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+ 
+.steps-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+  background: var(--border);
+}
+ 
+.step {
+  background: var(--deep); padding: 40px 28px; position: relative;
+  transition: background 0.3s;
+}
+.step:hover { background: var(--surface); }
+ 
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem; font-weight: 300; line-height: 1;
+  color: rgba(201,168,76,0.15); margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+ 
+.step h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-weight: 600; margin-bottom: 10px;
+}
+ 
+.step p { font-size: 0.85rem; line-height: 1.65; color: var(--muted); }
+ 
+.step-arrow {
+  position: absolute; right: -1px; top: 50%; transform: translateY(-50%);
+  width: 22px; height: 22px;
+  background: var(--gold); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; color: var(--black); z-index: 2;
+}
+ 
+/* WHO IT'S FOR */
+.audience-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+ 
+.audience-card {
+  border: 1px solid var(--border); border-radius: 16px;
+  padding: 40px 32px; position: relative; overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+  cursor: default;
+}
+ 
+.audience-card:hover {
+  border-color: rgba(201,168,76,0.3);
+  transform: translateY(-4px);
+}
+ 
+.audience-card::after {
+  content: '';
+  position: absolute; inset: 0; border-radius: 16px;
+  background: radial-gradient(ellipse 80% 80% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%);
+  opacity: 0; transition: opacity 0.3s; pointer-events: none;
+}
+.audience-card:hover::after { opacity: 1; }
+ 
+.audience-emoji { font-size: 2.4rem; margin-bottom: 20px; }
+ 
+.audience-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 600; margin-bottom: 12px;
+}
+ 
+.audience-card p { font-size: 0.88rem; line-height: 1.7; color: var(--muted); margin-bottom: 20px; }
+ 
+.audience-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.audience-list li {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 0.84rem; color: var(--muted);
+}
+.audience-list li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+ 
+/* QUOTE */
+.quote-section {
+  background: linear-gradient(135deg, var(--deep) 0%, var(--surface) 100%);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  text-align: center; padding: 100px 48px;
+}
+ 
+.quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 8rem; line-height: 0.6; color: var(--gold);
+  opacity: 0.3; margin-bottom: 20px;
+}
+ 
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-style: italic; font-weight: 400;
+  max-width: 700px; margin: 0 auto 24px;
+  line-height: 1.4; color: var(--white);
+}
+ 
+.quote-source {
+  font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold);
+}
+ 
+/* PRICING */
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  align-items: start;
+}
+ 
+.pricing-card {
+  border: 1px solid var(--border); border-radius: 16px;
+  padding: 40px 32px; position: relative; overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+ 
+.pricing-card:hover { transform: translateY(-4px); }
+ 
+.pricing-card.featured {
+  border-color: rgba(201,168,76,0.5);
+  background: linear-gradient(160deg, rgba(201,168,76,0.06), transparent);
+}
+ 
+.pricing-badge {
+  position: absolute; top: 20px; right: 20px;
+  background: var(--gold); color: var(--black);
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 100px;
+}
+ 
+.pricing-tier {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted2); margin-bottom: 12px;
+}
+ 
+.pricing-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem; font-weight: 600; line-height: 1;
+  margin-bottom: 4px;
+}
+ 
+.pricing-price sup { font-size: 1.2rem; vertical-align: super; color: var(--muted); }
+.pricing-price span { font-size: 1rem; color: var(--muted); }
+ 
+.pricing-desc { font-size: 0.85rem; color: var(--muted); margin-bottom: 28px; line-height: 1.6; }
+ 
+.pricing-divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+ 
+.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+.pricing-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: var(--muted); }
+.pricing-features li .check { color: var(--gold); font-size: 0.75rem; margin-top: 1px; flex-shrink: 0; }
+.pricing-features li.dim { opacity: 0.4; }
+.pricing-features li.dim .check { color: var(--muted2); }
+ 
+.btn-tier {
+  display: block; text-align: center; width: 100%;
+  padding: 13px; border-radius: 8px;
+  font-weight: 600; font-size: 0.9rem; text-decoration: none;
+  transition: all 0.2s;
+}
+ 
+.btn-tier-outline {
+  border: 1px solid var(--border2); color: var(--white);
+}
+.btn-tier-outline:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); }
+ 
+.btn-tier-gold {
+  background: var(--gold); color: var(--black);
+  box-shadow: 0 8px 24px rgba(201,168,76,0.25);
+}
+.btn-tier-gold:hover { background: var(--gold-lt); box-shadow: 0 12px 32px rgba(201,168,76,0.35); }
+ 
+/* TESTIMONIALS */
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+ 
+.testimonial {
+  background: var(--deep); border: 1px solid var(--border);
+  border-radius: 16px; padding: 32px 28px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.testimonial:hover { border-color: rgba(201,168,76,0.25); transform: translateY(-3px); }
+ 
+.testimonial-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 16px; letter-spacing: 2px; }
+ 
+.testimonial-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem; font-style: italic; line-height: 1.6;
+  color: rgba(245,240,232,0.85); margin-bottom: 20px;
+}
+ 
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+ 
+.author-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.85rem; color: var(--black);
+}
+ 
+.author-name { font-size: 0.85rem; font-weight: 600; }
+.author-role { font-size: 0.75rem; color: var(--muted2); }
+ 
+/* CTA */
+.cta-section {
+  padding: 100px 48px;
+  text-align: center; position: relative; overflow: hidden;
+}
+ 
+.cta-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 65%);
+}
+ 
+.cta-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+ 
+.cta-inner h2 { margin-bottom: 20px; }
+.cta-inner p { font-size: 1.05rem; color: var(--muted); line-height: 1.7; margin-bottom: 40px; }
+ 
+.cta-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+ 
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 60px 48px 40px;
+  max-width: 1200px; margin: 0 auto;
+}
+ 
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px; margin-bottom: 56px;
+}
+ 
+.footer-brand p {
+  font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-top: 14px; max-width: 240px;
+}
+ 
+.footer-col h4 {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted2); margin-bottom: 16px;
+}
+ 
+.footer-col a {
+  display: block; text-decoration: none; font-size: 0.88rem;
+  color: var(--muted); margin-bottom: 9px; transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+ 
+.footer-bottom {
+  border-top: 1px solid var(--border); padding-top: 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+ 
+.footer-copy { font-size: 0.8rem; color: var(--muted2); }
+.footer-verse { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; font-style: italic; color: var(--muted2); }
+ 
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+ 
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { padding: 90px 24px 60px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 60px; }
+  .phone-second { display: none; }
+  .section { padding: 80px 24px; }
+  .section-full { padding: 80px 24px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .audience-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
+ 
+</style>
+</head>
+<body>
+ 
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">M</div>
+    Mentor
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#audience">Who It's For</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#pricing" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow"><span></span> Faith-Based Discipleship</div>
+      <h1>Walk <em>Together</em> in Faith.</h1>
+      <p class="hero-sub">Mentor connects churches, camps, and schools with a platform built to deepen discipleship — Bible studies, prayer boards, mentorship, and more. All in one place.</p>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn-primary">Start Free →</a>
+        <a href="#features" class="btn-ghost">See How It Works</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-label">Built for</span>
+        <div class="hero-trust-orgs">
+          <span class="org-chip">Churches</span>
+          <span class="org-chip">Camps</span>
+          <span class="org-chip">Schools</span>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="hero-visual">
+      <div class="phone-second">
+        <div class="phone-second-screen">
+          <div class="snd-header">Bible Studies</div>
+          <div class="snd-study-card">
+            <div class="snd-study-tag">Week 4</div>
+            <div class="snd-study-title">The Sermon on the Mount</div>
+            <div class="snd-progress-bar"><div class="snd-progress-fill"></div></div>
+          </div>
+          <div class="snd-study-card" style="background:rgba(255,255,255,0.03); border-color:rgba(255,255,255,0.07); margin-top:6px;">
+            <div class="snd-study-tag" style="color:rgba(245,240,232,0.4);">Upcoming</div>
+            <div class="snd-study-title" style="font-size:0.68rem;">Romans: Grace & Faith</div>
+          </div>
+          <div style="margin-top:12px; font-size:0.52rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,240,232,0.3); margin-bottom:6px;">Members</div>
+          <div class="snd-members">
+            <div class="snd-member" style="background:#c9a84c;">J</div>
+            <div class="snd-member" style="background:#3d9e60;">A</div>
+            <div class="snd-member" style="background:#5b8cff;">M</div>
+            <div class="snd-member" style="background:#9b6b9b;">R</div>
+            <div class="snd-member" style="background:#c97a4c; font-size:0.4rem; color:rgba(245,240,232,0.5); background:rgba(255,255,255,0.06);">+4</div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-outer">
+        <div class="phone-glow"></div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="app-header">
+              <div>
+                <div class="app-greeting">Good morning,</div>
+                <div class="app-username">Jordan</div>
+              </div>
+              <div class="app-avatar">JH</div>
+            </div>
+ 
+            <div class="app-verse-card">
+              <div class="verse-label">Verse of the Day</div>
+              <div class="verse-text">"I can do all things through Christ who strengthens me."</div>
+              <div class="verse-ref">Philippians 4:13</div>
+            </div>
+ 
+            <div class="app-section-title">Your Mentor</div>
+            <div class="app-mentor-card">
+              <div class="mentor-dot"></div>
+              <div class="mentor-info">
+                <div class="mentor-name">Pastor David</div>
+                <div class="mentor-status">Last message 2h ago</div>
+              </div>
+              <div class="mentor-badge">Active</div>
+            </div>
+ 
+            <div class="app-section-title">Quick Access</div>
+            <div class="app-quick-grid">
+              <div class="quick-card">
+                <div class="quick-icon">📖</div>
+                <div class="quick-label">Bible Reading</div>
+                <div class="quick-val">14 days</div>
+              </div>
+              <div class="quick-card">
+                <div class="quick-icon">🙏</div>
+                <div class="quick-label">Prayer Board</div>
+                <div class="quick-val">7 requests</div>
+              </div>
+              <div class="quick-card">
+                <div class="quick-icon">📝</div>
+                <div class="quick-label">Journal</div>
+                <div class="quick-val">3 entries</div>
+              </div>
+              <div class="quick-card">
+                <div class="quick-icon">👥</div>
+                <div class="quick-label">My Group</div>
+                <div class="quick-val">8 members</div>
+              </div>
+            </div>
+ 
+            <div class="app-section-title" style="margin-top:10px;">Community Prayer</div>
+            <div class="app-prayer-item">
+              <div class="prayer-dot"></div>
+              <div class="prayer-text">Pray for my family's move to Nashville this week. Trusting in His plan.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="marquee-dot"></span> Mentorship Tracking</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Bible Study Groups</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Prayer Boards</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Daily Devotionals</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Memory Verses</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Faith Journals</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Church Groups</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Camp Communities</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Answered Prayer Tracking</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Progress Goals</span>
+    <!-- repeat -->
+    <span class="marquee-item"><span class="marquee-dot"></span> Mentorship Tracking</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Bible Study Groups</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Prayer Boards</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Daily Devotionals</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Memory Verses</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Faith Journals</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Church Groups</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Camp Communities</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Answered Prayer Tracking</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Progress Goals</span>
+  </div>
+</div>
+ 
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="eyebrow reveal">Everything You Need</div>
+  <h2 class="reveal reveal-delay-1">A complete platform for <em>spiritual growth.</em></h2>
+  <p class="section-sub reveal reveal-delay-2">Every tool a ministry needs to connect mentors and mentees, grow in community, and walk faithfully together.</p>
+ 
+  <div class="feature-grid reveal reveal-delay-3">
+    <div class="feature-card">
+      <div class="feature-icon">🤝</div>
+      <h3>Mentorship</h3>
+      <p>Connect mentors and mentees in a structured, intentional relationship. Track progress, set goals, and encourage consistent communication.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📖</div>
+      <h3>Bible Study Groups</h3>
+      <p>Create and manage group Bible studies with shared content, discussion boards, and progress tracking. Built-in table of contents scanning.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🙏</div>
+      <h3>Prayer Boards</h3>
+      <p>Community-wide and group prayer boards where members can share requests, react with encouragement, and celebrate answered prayers.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📝</div>
+      <h3>Journaling</h3>
+      <p>Personal faith journals for reflection and documentation. A private space for spiritual notes, insights, and growth milestones.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🏛️</div>
+      <h3>Church Groups</h3>
+      <p>Organize your entire community with group join codes, role management, and a shared experience tailored to your church or organization.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Growth Tracking</h3>
+      <p>Set rhythms and goals for Bible reading, prayer, and worship. Track streaks, celebrate milestones, and stay accountable together.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- HOW IT WORKS -->
+<div class="how-section section-full" id="how">
+  <div class="section-inner">
+    <div class="eyebrow reveal">Simple Process</div>
+    <h2 class="reveal reveal-delay-1">Up and running in <em>minutes.</em></h2>
+    <p class="section-sub reveal reveal-delay-2">No lengthy setup or complex onboarding. Your community can start walking in faith together today.</p>
+ 
+    <div class="steps-grid reveal reveal-delay-3">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Create Your Organization</h3>
+        <p>Sign up and set up your church, camp, or school. Customize your group and invite your leadership team.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Invite Your Community</h3>
+        <p>Share a simple join code with your congregation or students. They're in within seconds — no lengthy registration.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Pair Mentors & Mentees</h3>
+        <p>Match leaders with those they're discipling. Set goals, track growth, and keep relationships intentional.</p>
+        <div class="step-arrow">→</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Grow Together</h3>
+        <p>Launch Bible studies, build prayer boards, and track faith rhythms — all in one unified, beautiful platform.</p>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- WHO IT'S FOR -->
+<section class="section" id="audience">
+  <div class="eyebrow reveal">Who It's For</div>
+  <h2 class="reveal reveal-delay-1">Built for every <em>community of faith.</em></h2>
+  <p class="section-sub reveal reveal-delay-2">From Sunday morning to summer camp to the classroom — Mentor adapts to how your ministry operates.</p>
+ 
+  <div class="audience-grid">
+    <div class="audience-card reveal">
+      <div class="audience-emoji">⛪</div>
+      <h3>Churches</h3>
+      <p>Equip your pastoral team to disciple at scale without losing the personal touch that makes mentorship meaningful.</p>
+      <ul class="audience-list">
+        <li>Small group coordination</li>
+        <li>Pastoral mentorship tracking</li>
+        <li>Congregational prayer wall</li>
+        <li>Sermon-aligned Bible studies</li>
+      </ul>
+    </div>
+    <div class="audience-card reveal reveal-delay-1">
+      <div class="audience-emoji">🏕️</div>
+      <h3>Camps</h3>
+      <p>Extend the impact of summer camp beyond the week itself. Keep campers connected to their counselors all year.</p>
+      <ul class="audience-list">
+        <li>Counselor–camper mentorship</li>
+        <li>Post-camp follow-up tools</li>
+        <li>Memory verse tracking</li>
+        <li>Faith goals & challenges</li>
+      </ul>
+    </div>
+    <div class="audience-card reveal reveal-delay-2">
+      <div class="audience-emoji">🏫</div>
+      <h3>Schools</h3>
+      <p>Give students a structured, faith-filled environment to grow under the guidance of trusted faculty mentors.</p>
+      <ul class="audience-list">
+        <li>Faculty mentor matching</li>
+        <li>Chapel & devotional tie-ins</li>
+        <li>Student accountability tools</li>
+        <li>Spiritual formation tracking</li>
+      </ul>
+    </div>
+  </div>
+</section>
+ 
+<!-- SCRIPTURE QUOTE -->
+<div class="quote-section">
+  <div class="quote-mark">"</div>
+  <p class="quote-text">As iron sharpens iron, so one person sharpens another.</p>
+  <div class="quote-source">Proverbs 27:17</div>
+</div>
+ 
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="eyebrow reveal">Pricing</div>
+  <h2 class="reveal reveal-delay-1">Simple, honest <em>pricing.</em></h2>
+  <p class="section-sub reveal reveal-delay-2">Start free, grow with your ministry. No hidden fees, no complicated contracts.</p>
+ 
+  <div class="pricing-grid">
+    <div class="pricing-card reveal">
+      <div class="pricing-tier">Free</div>
+      <div class="pricing-price">$0<span>/mo</span></div>
+      <p class="pricing-desc">For individuals and small groups just getting started with discipleship.</p>
+      <hr class="pricing-divider">
+      <ul class="pricing-features">
+        <li><span class="check">✦</span> 1 mentor relationship</li>
+        <li><span class="check">✦</span> Personal journal & verse tracking</li>
+        <li><span class="check">✦</span> Basic prayer board access</li>
+        <li><span class="check">✦</span> Up to 10 group members</li>
+        <li class="dim"><span class="check">—</span> Custom org branding</li>
+        <li class="dim"><span class="check">—</span> Analytics & reporting</li>
+        <li class="dim"><span class="check">—</span> Priority support</li>
+      </ul>
+      <a href="#" class="btn-tier btn-tier-outline">Get Started Free</a>
+    </div>
+ 
+    <div class="pricing-card featured reveal reveal-delay-1">
+      <div class="pricing-badge">Most Popular</div>
+      <div class="pricing-tier">Pro</div>
+      <div class="pricing-price">$4<sup>.99</sup><span>/mo</span></div>
+      <p class="pricing-desc">For serious disciples and small ministries who want the full Mentor experience.</p>
+      <hr class="pricing-divider">
+      <ul class="pricing-features">
+        <li><span class="check">✦</span> Unlimited mentor relationships</li>
+        <li><span class="check">✦</span> All journal & verse features</li>
+        <li><span class="check">✦</span> Full prayer & discussion boards</li>
+        <li><span class="check">✦</span> Bible study group creation</li>
+        <li><span class="check">✦</span> Faith goals & rhythm tracking</li>
+        <li><span class="check">✦</span> Push notification reminders</li>
+        <li class="dim"><span class="check">—</span> Org dashboard & admin tools</li>
+      </ul>
+      <a href="#" class="btn-tier btn-tier-gold">Start Pro →</a>
+    </div>
+ 
+    <div class="pricing-card reveal reveal-delay-2">
+      <div class="pricing-tier">Church</div>
+      <div class="pricing-price">$29<span>/mo</span></div>
+      <p class="pricing-desc">For churches, camps, and schools managing a full community of faith. Per organization.</p>
+      <hr class="pricing-divider">
+      <ul class="pricing-features">
+        <li><span class="check">✦</span> Everything in Pro</li>
+        <li><span class="check">✦</span> Unlimited members & groups</li>
+        <li><span class="check">✦</span> Organization dashboard</li>
+        <li><span class="check">✦</span> Custom join codes & branding</li>
+        <li><span class="check">✦</span> Admin role management</li>
+        <li><span class="check">✦</span> Usage analytics & reports</li>
+        <li><span class="check">✦</span> Priority email support</li>
+      </ul>
+      <a href="#" class="btn-tier btn-tier-outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+ 
+<!-- TESTIMONIALS -->
+<div class="section-full" style="background: var(--deep); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);" id="about">
+  <div class="section-inner" style="padding: 100px 0;">
+    <div class="eyebrow reveal">Stories</div>
+    <h2 class="reveal reveal-delay-1">What communities are <em>saying.</em></h2>
+    <p class="section-sub reveal reveal-delay-2">Built in community, grown in faith.</p>
+ 
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Mentor has completely changed how I disciple my students. Having everything — prayer requests, study notes, check-ins — in one place is a game changer."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #c9a84c, #e8c97a);">TR</div>
+          <div>
+            <div class="author-name">Tyler R.</div>
+            <div class="author-role">Youth Pastor</div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="testimonial reveal reveal-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"We used it at camp this summer and the counselors loved how easy it was to keep up with their campers even after they went home. It extended the camp community."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #3d9e60, #5bc47f);">AM</div>
+          <div>
+            <div class="author-name">Ashley M.</div>
+            <div class="author-role">Camp Director</div>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="testimonial reveal reveal-delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Our small groups finally feel connected between Sundays. The prayer board alone has transformed how our congregation cares for one another."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background: linear-gradient(135deg, #5b8cff, #8ab4ff);">JK</div>
+          <div>
+            <div class="author-name">James K.</div>
+            <div class="author-role">Associate Pastor</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <div class="eyebrow" style="justify-content: center;">Get Started Today</div>
+    <h2>Ready to <em>walk together?</em></h2>
+    <p>Join churches, camps, and schools already using Mentor to deepen discipleship and grow their communities in faith.</p>
+    <div class="cta-actions">
+      <a href="#pricing" class="btn-primary">Start for Free →</a>
+      <a href="mailto:hello@mentorapp.com" class="btn-ghost">Contact Us</a>
+    </div>
+  </div>
+</div>
+ 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav-logo" style="text-decoration:none;">
+        <div class="nav-logo-mark">M</div>
+        Mentor
+      </a>
+      <p>A faith-based discipleship platform for churches, camps, and schools. Built to help communities walk together in faith.</p>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Product</h4>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#">Download App</a>
+      <a href="#">Changelog</a>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Ministry</h4>
+      <a href="#audience">Churches</a>
+      <a href="#audience">Camps</a>
+      <a href="#audience">Schools</a>
+      <a href="#">Partners</a>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#about">About</a>
+      <a href="mailto:hello@mentorapp.com">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+ 
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Mentor App. All rights reserved.</div>
+    <div class="footer-verse">"Walk with the wise and become wise." — Proverbs 13:20</div>
+  </div>
+</footer>
+ 
+<script>
+// SCROLL REVEAL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+ 
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+ 
+// NAV SCROLL EFFECT
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.style.background = 'rgba(7,7,9,0.96)';
+  } else {
+    nav.style.background = 'rgba(7,7,9,0.82)';
+  }
+});
+ 
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
+ 
