@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Mentor</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --gold: #C9A84C; --gold-dim: #8B6F32; --bg: #0A0A08; --bg-surface: #111110;
+    --bg-card: #161614; --text-primary: #F0EDE6; --text-secondary: #9A9488;
+    --text-muted: #5A5650; --border: rgba(201, 168, 76, 0.12); --border-mid: rgba(201, 168, 76, 0.22);
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text-primary); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.8; font-size: 16px; min-height: 100vh; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 3rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); background: rgba(10, 10, 8, 0.92); backdrop-filter: blur(12px); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--gold); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; }
+  .nav-back { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+  .nav-back:hover { color: var(--gold); }
+  .hero { padding: 9rem 3rem 5rem; max-width: 860px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+  .hero-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 300; line-height: 1.05; color: var(--text-primary); margin-bottom: 1.5rem; }
+  .hero-meta { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.06em; }
+  .hero-meta span { color: var(--text-secondary); }
+  .content-wrapper { max-width: 860px; margin: 0 auto; padding: 0 3rem 6rem; display: grid; grid-template-columns: 220px 1fr; gap: 5rem; align-items: start; }
+  .toc { position: sticky; top: 6rem; padding-top: 4rem; }
+  .toc-title { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.25rem; }
+  .toc a { display: block; font-size: 0.78rem; font-weight: 400; color: var(--text-muted); text-decoration: none; padding: 0.3rem 0; padding-left: 0.75rem; border-left: 1px solid var(--border); transition: color 0.2s, border-color 0.2s; line-height: 1.5; }
+  .toc a:hover { color: var(--gold); border-left-color: var(--gold-dim); }
+  .policy-body { padding-top: 4rem; }
+  .section { margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+  .section-num { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 0.75rem; }
+  .section h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1.25rem; line-height: 1.2; }
+  .section p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.85; }
+  .section p:last-child { margin-bottom: 0; }
+  .section ul { list-style: none; margin: 1rem 0; }
+  .section ul li { font-size: 0.95rem; color: var(--text-secondary); padding: 0.35rem 0 0.35rem 1.25rem; position: relative; line-height: 1.7; }
+  .section ul li::before { content: ''; position: absolute; left: 0; top: 0.78rem; width: 5px; height: 1px; background: var(--gold-dim); }
+  .callout { background: var(--bg-card); border: 1px solid var(--border-mid); border-left: 2px solid var(--gold); padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
+  .callout p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; font-style: italic; }
+  .contact-card { background: var(--bg-card); border: 1px solid var(--border-mid); padding: 2rem; margin-top: 1.5rem; }
+  .contact-card p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
+  .contact-card a { color: var(--gold); text-decoration: none; }
+  .contact-card a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  footer { border-top: 1px solid var(--border); padding: 2.5rem 3rem; max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.06em; }
+  footer a { font-size: 0.75rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
+  footer a:hover { color: var(--gold); }
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .content-wrapper { grid-template-columns: 1fr; gap: 0; padding: 0 1.5rem 4rem; }
+    .toc { display: none; }
+    footer { flex-direction: column; gap: 0.5rem; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Mentor</a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Legal</div>
+  <h1>Terms of Service</h1>
+  <p class="hero-meta">Last updated <span>March 31, 2026</span> &nbsp;·&nbsp; Effective immediately</p>
+</div>
+
+<div class="content-wrapper">
+  <aside class="toc">
+    <div class="toc-title">On this page</div>
+    <a href="#acceptance">Acceptance</a>
+    <a href="#description">Description of service</a>
+    <a href="#accounts">Accounts</a>
+    <a href="#acceptable-use">Acceptable use</a>
+    <a href="#content">Your content</a>
+    <a href="#organizations">Organizations</a>
+    <a href="#payment">Payment</a>
+    <a href="#termination">Termination</a>
+    <a href="#liability">Limitation of liability</a>
+    <a href="#changes">Changes</a>
+    <a href="#contact">Contact</a>
+  </aside>
+
+  <div class="policy-body">
+
+    <div class="section">
+      <p>These Terms of Service govern your use of Mentor, a faith-based discipleship platform operated by Mentor Discipleship. By creating an account or using the service, you agree to these terms. Please read them carefully.</p>
+      <div class="callout">
+        <p>Mentor is built to serve communities of faith. We ask that you use it in a manner consistent with that purpose — with integrity, respect, and care for others.</p>
+      </div>
+    </div>
+
+    <div class="section" id="acceptance">
+      <div class="section-num">01</div>
+      <h2>Acceptance of terms</h2>
+      <p>By accessing or using Mentor, you confirm that you are at least 13 years old, or that a parent, guardian, or authorized organization administrator has created your account on your behalf. If you are under 18, your parent or guardian must review and agree to these terms.</p>
+      <p>If you are using Mentor on behalf of a church, camp, school, or other organization, you represent that you have authority to bind that organization to these terms.</p>
+    </div>
+
+    <div class="section" id="description">
+      <div class="section-num">02</div>
+      <h2>Description of service</h2>
+      <p>Mentor is a web-based discipleship platform that provides tools for mentorship tracking, Bible study groups, prayer boards, journaling, church group management, and faith growth tracking. We offer free and paid subscription tiers.</p>
+      <p>We reserve the right to modify, suspend, or discontinue any part of the service at any time with reasonable notice.</p>
+    </div>
+
+    <div class="section" id="accounts">
+      <div class="section-num">03</div>
+      <h2>Accounts</h2>
+      <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You agree to notify us immediately at <a href="mailto:help@mentordiscipleship.com" style="color: var(--gold); text-decoration: none;">help@mentordiscipleship.com</a> if you suspect unauthorized access.</p>
+      <p>You may not share your account with others or create accounts on behalf of someone else without their explicit consent.</p>
+    </div>
+
+    <div class="section" id="acceptable-use">
+      <div class="section-num">04</div>
+      <h2>Acceptable use</h2>
+      <p>You agree to use Mentor only for lawful purposes and in ways that respect others in the community. You may not use Mentor to:</p>
+      <ul>
+        <li>Post content that is abusive, threatening, harassing, or discriminatory</li>
+        <li>Share content that is sexually explicit or inappropriate for a faith-based context</li>
+        <li>Impersonate another person or organization</li>
+        <li>Attempt to gain unauthorized access to any part of the service</li>
+        <li>Use the platform for commercial solicitation without our written permission</li>
+        <li>Violate any applicable local, national, or international law</li>
+      </ul>
+      <p>We reserve the right to remove content and suspend accounts that violate these guidelines.</p>
+    </div>
+
+    <div class="section" id="content">
+      <div class="section-num">05</div>
+      <h2>Your content</h2>
+      <p>You retain ownership of all content you post on Mentor — prayer requests, journal entries, Bible study notes, and messages. By posting content, you grant Mentor a limited license to store and display that content solely for the purpose of providing the service to you and your community.</p>
+      <p>We do not sell your content, use it for advertising, or share it outside your community without your consent. You are responsible for ensuring that anything you post does not violate the rights of others.</p>
+    </div>
+
+    <div class="section" id="organizations">
+      <div class="section-num">06</div>
+      <h2>Organizations</h2>
+      <p>Churches, camps, and schools using Mentor's organization features take on additional responsibilities. Organization administrators agree to:</p>
+      <ul>
+        <li>Obtain appropriate parental or guardian consent for members under 18</li>
+        <li>Use member data only for ministry purposes within the platform</li>
+        <li>Maintain appropriate oversight of content posted within their groups</li>
+        <li>Comply with applicable laws regarding minors and data privacy</li>
+      </ul>
+      <p>Mentor is not responsible for the conduct of organization administrators or members.</p>
+    </div>
+
+    <div class="section" id="payment">
+      <div class="section-num">07</div>
+      <h2>Payment and subscriptions</h2>
+      <p>Paid subscriptions are billed on a monthly basis. You may cancel at any time and your access will continue until the end of the current billing period. We do not offer refunds for partial months.</p>
+      <p>We reserve the right to change our pricing with at least 30 days notice. Continued use of the service after a price change constitutes acceptance of the new pricing.</p>
+    </div>
+
+    <div class="section" id="termination">
+      <div class="section-num">08</div>
+      <h2>Termination</h2>
+      <p>You may delete your account at any time from within the app. Upon deletion, your personal data will be removed from our systems within 30 days, except where retention is required by law.</p>
+      <p>We may suspend or terminate your account if you violate these terms, with or without notice depending on the severity of the violation.</p>
+    </div>
+
+    <div class="section" id="liability">
+      <div class="section-num">09</div>
+      <h2>Limitation of liability</h2>
+      <p>Mentor is provided "as is" without warranties of any kind. We do not guarantee that the service will be uninterrupted, error-free, or free from security vulnerabilities.</p>
+      <p>To the maximum extent permitted by law, Mentor's liability for any claim arising from your use of the service is limited to the amount you paid us in the 12 months preceding the claim. We are not liable for indirect, incidental, or consequential damages.</p>
+    </div>
+
+    <div class="section" id="changes">
+      <div class="section-num">10</div>
+      <h2>Changes to these terms</h2>
+      <p>We may update these terms as our service evolves. When we make material changes, we will notify you by email or by a prominent notice in the app at least 14 days before the change takes effect. Continued use of Mentor after that date constitutes acceptance of the updated terms.</p>
+    </div>
+
+    <div class="section" id="contact">
+      <div class="section-num">11</div>
+      <h2>Contact</h2>
+      <p>Questions about these terms? We're happy to help.</p>
+      <div class="contact-card">
+        <p><strong style="color: var(--text-primary); font-weight: 500;">Mentor Discipleship</strong></p>
+        <p>Email: <a href="mailto:help@mentordiscipleship.com">help@mentordiscipleship.com</a></p>
+        <p>Website: <a href="https://mentordiscipleship.com">mentordiscipleship.com</a></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Mentor Discipleship. All rights reserved.</p>
+  <a href="/">mentordiscipleship.com</a>
+</footer>
+
+</body>
+</html>
