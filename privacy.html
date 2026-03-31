@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Mentor</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #C9A84C;
+    --gold-dim: #8B6F32;
+    --bg: #0A0A08;
+    --bg-surface: #111110;
+    --bg-card: #161614;
+    --text-primary: #F0EDE6;
+    --text-secondary: #9A9488;
+    --text-muted: #5A5650;
+    --border: rgba(201, 168, 76, 0.12);
+    --border-mid: rgba(201, 168, 76, 0.22);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    font-size: 16px;
+    min-height: 100vh;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10, 10, 8, 0.92);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .nav-back {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-back:hover { color: var(--gold); }
+
+  .hero {
+    padding: 9rem 3rem 5rem;
+    max-width: 860px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .hero-meta span { color: var(--text-secondary); }
+
+  .content-wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 3rem 6rem;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .toc {
+    position: sticky;
+    top: 6rem;
+    padding-top: 4rem;
+  }
+
+  .toc-title {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+  }
+
+  .toc a {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 0.3rem 0;
+    padding-left: 0.75rem;
+    border-left: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s;
+    line-height: 1.5;
+  }
+
+  .toc a:hover {
+    color: var(--gold);
+    border-left-color: var(--gold-dim);
+  }
+
+  .policy-body {
+    padding-top: 4rem;
+  }
+
+  .section {
+    margin-bottom: 3.5rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section:last-child {
+    border-bottom: none;
+  }
+
+  .section-num {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.75rem;
+  }
+
+  .section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .section p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.85;
+  }
+
+  .section p:last-child { margin-bottom: 0; }
+
+  .section ul {
+    list-style: none;
+    margin: 1rem 0;
+  }
+
+  .section ul li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    padding: 0.35rem 0 0.35rem 1.25rem;
+    position: relative;
+    line-height: 1.7;
+  }
+
+  .section ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.78rem;
+    width: 5px;
+    height: 1px;
+    background: var(--gold-dim);
+  }
+
+  .callout {
+    background: var(--bg-card);
+    border: 1px solid var(--border-mid);
+    border-left: 2px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .callout p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0;
+    font-style: italic;
+  }
+
+  .contact-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-mid);
+    padding: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .contact-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-card a {
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .contact-card a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 3rem;
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  footer a {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.2s;
+  }
+
+  footer a:hover { color: var(--gold); }
+
+  @media (max-width: 700px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .content-wrapper { grid-template-columns: 1fr; gap: 0; padding: 0 1.5rem 4rem; }
+    .toc { display: none; }
+    footer { flex-direction: column; gap: 0.5rem; padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Mentor</a>
+  <a href="/" class="nav-back">← Back to home</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="hero-meta">Last updated <span>March 31, 2026</span> &nbsp;·&nbsp; Effective immediately</p>
+</div>
+
+<div class="content-wrapper">
+
+  <aside class="toc">
+    <div class="toc-title">On this page</div>
+    <a href="#information-we-collect">Information we collect</a>
+    <a href="#how-we-use">How we use it</a>
+    <a href="#what-we-dont-do">What we don't do</a>
+    <a href="#data-storage">Data storage</a>
+    <a href="#your-rights">Your rights</a>
+    <a href="#children">Children</a>
+    <a href="#third-parties">Third parties</a>
+    <a href="#changes">Changes</a>
+    <a href="#contact">Contact</a>
+  </aside>
+
+  <div class="policy-body">
+
+    <div class="section">
+      <p>Mentor ("we," "our," or "us") is a faith-based discipleship platform built for churches, camps, and schools. We are committed to protecting your personal information and being transparent about what we collect and why. This policy explains our data practices in plain language.</p>
+      <div class="callout">
+        <p>We built Mentor to serve communities of faith. We do not sell your data, show you ads, or use your spiritual content to train AI models.</p>
+      </div>
+    </div>
+
+    <div class="section" id="information-we-collect">
+      <div class="section-num">01</div>
+      <h2>Information we collect</h2>
+      <p>We collect only what is necessary to provide the Mentor service.</p>
+      <ul>
+        <li>Account information: your name, email address, and password (stored as a one-way hash — we cannot read it)</li>
+        <li>Profile information: display name and profile photo you choose to upload</li>
+        <li>Content you create: prayer requests, journal entries, Bible study notes, discussion posts, and messages</li>
+        <li>Relationship data: mentor/mentee connections and church or group memberships you join</li>
+        <li>Usage data: feature interactions and general activity to help us improve the app</li>
+        <li>Device information: browser type and push notification tokens if you enable notifications</li>
+      </ul>
+    </div>
+
+    <div class="section" id="how-we-use">
+      <div class="section-num">02</div>
+      <h2>How we use your information</h2>
+      <p>We use your information solely to operate and improve Mentor.</p>
+      <ul>
+        <li>Providing the core discipleship features: prayer, journaling, mentorship, and group tools</li>
+        <li>Sending transactional emails such as password resets and account notifications</li>
+        <li>Delivering push notifications you have opted into</li>
+        <li>Diagnosing technical issues and improving app performance</li>
+        <li>Communicating with you about your account or changes to our service</li>
+      </ul>
+    </div>
+
+    <div class="section" id="what-we-dont-do">
+      <div class="section-num">03</div>
+      <h2>What we don't do</h2>
+      <p>These commitments are foundational to how we operate.</p>
+      <ul>
+        <li>We do not sell, rent, or trade your personal information to any third party</li>
+        <li>We do not display advertising of any kind inside the app</li>
+        <li>We do not use your prayer requests, journal entries, or messages to train AI systems</li>
+        <li>We do not share your spiritual content with your church organization without your explicit participation</li>
+        <li>We do not retain data after account deletion beyond what is required by law</li>
+      </ul>
+    </div>
+
+    <div class="section" id="data-storage">
+      <div class="section-num">04</div>
+      <h2>Data storage and security</h2>
+      <p>Your data is stored on servers in the United States. We use industry-standard security practices including encrypted connections (HTTPS), hashed password storage, and access controls that limit who on our team can access production data.</p>
+      <p>Profile images and uploaded files are stored on Cloudflare R2 with private access controls. We do not make your uploaded files publicly accessible by default.</p>
+      <p>No method of transmission or storage is 100% secure. We take reasonable precautions but cannot guarantee absolute security.</p>
+    </div>
+
+    <div class="section" id="your-rights">
+      <div class="section-num">05</div>
+      <h2>Your rights</h2>
+      <p>You have the following rights regarding your personal data.</p>
+      <ul>
+        <li>Access: request a copy of the personal data we hold about you</li>
+        <li>Correction: ask us to correct inaccurate or incomplete data</li>
+        <li>Deletion: request that we delete your account and associated data</li>
+        <li>Export: request your data in a portable format</li>
+        <li>Opt-out: disable push notifications at any time in your browser or device settings</li>
+      </ul>
+      <p>To exercise any of these rights, email us at <a href="/cdn-cgi/l/email-protection#92fef7e4fbd2fff7fce6fde0f6fbe1f1fbe2fef7e1fafbe2bcf1fdff" style="color: var(--gold); text-decoration: none;"><span class="__cf_email__" data-cfemail="e28e87948ba28f878c968d90868b91818b928e87918a8b92cc818d8f">[email&#160;protected]</span></a>. We will respond within 30 days.</p>
+    </div>
+
+    <div class="section" id="children">
+      <div class="section-num">06</div>
+      <h2>Children and minors</h2>
+      <p>Mentor is used in camps, schools, and youth ministry contexts. We take the privacy of minors seriously. Accounts for users under 13 must be created by a parent, guardian, or authorized organization administrator. We do not knowingly collect personal data from children under 13 without verified parental consent.</p>
+      <p>Organizations using Mentor for youth programs are responsible for obtaining appropriate consent from parents or guardians as required by applicable law, including COPPA.</p>
+    </div>
+
+    <div class="section" id="third-parties">
+      <div class="section-num">07</div>
+      <h2>Third-party services</h2>
+      <p>We use a limited number of trusted third-party services to operate Mentor. Each is bound by their own privacy policies.</p>
+      <ul>
+        <li>Resend — transactional email delivery</li>
+        <li>Cloudflare — file storage and DNS</li>
+        <li>DigitalOcean — database and server hosting</li>
+        <li>Vercel — frontend hosting</li>
+      </ul>
+      <p>We do not integrate with advertising networks, social media trackers, or data brokers.</p>
+    </div>
+
+    <div class="section" id="changes">
+      <div class="section-num">08</div>
+      <h2>Changes to this policy</h2>
+      <p>We may update this policy as our service evolves. When we make material changes, we will notify you by email or by a prominent notice in the app at least 14 days before the change takes effect. Continued use of Mentor after that date constitutes acceptance of the updated policy.</p>
+    </div>
+
+    <div class="section" id="contact">
+      <div class="section-num">09</div>
+      <h2>Contact</h2>
+      <p>Questions about this policy or your data? We're a small team and we read every email.</p>
+      <div class="contact-card">
+        <p><strong style="color: var(--text-primary); font-weight: 500;">Mentor Discipleship</strong></p>
+        <p>Email: <a href="/cdn-cgi/l/email-protection#ff939a8996bf929a918b908d9b968c9c968f939a8c97968fd19c9092"><span class="__cf_email__" data-cfemail="d4b8b1a2bd94b9b1baa0bba6b0bda7b7bda4b8b1a7bcbda4fab7bbb9">[email
