@@ -242,7 +242,9 @@ nav {
 footer { background: #0a1a27; border-top: 1px solid #2a4a5a; padding: 3.5rem 2rem 2rem; }
 .foot-inner { max-width: 1080px; margin: 0 auto; }
 .foot-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; margin-bottom: 2.75rem; }
-.foot-brand-desc { font-family: Georgia, 'Times New Roman', serif; font-size: 0.88rem; color: #8ab8c8; line-height: 1.7; max-width: 270px; margin-top: 0.85rem; }
+.foot-brand { display: flex; flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+.foot-brand .nav-logo { display: block; line-height: 0; margin: 0 0 0 -14px; }
+.foot-brand-desc { font-family: Georgia, 'Times New Roman', serif; font-size: 0.88rem; color: #8ab8c8; line-height: 1.7; max-width: 270px; margin-top: 0; }
 .foot-col-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #f07820; margin-bottom: 1rem; }
 .foot-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
 .foot-links a { color: #8ab8c8; text-decoration: none; font-size: 0.86rem; transition: color 0.2s; }
@@ -531,7 +533,7 @@ footer { background: #0a1a27; border-top: 1px solid #2a4a5a; padding: 3.5rem 2re
     <div class="foot-top">
       <div class="foot-brand">
         <a class="nav-logo" href="#">
-          <img src="Orange%20Logo.png" alt="Mentor" style="height:30px;width:30px;" />
+          <img src="Orange.png" alt="Mentor" style="height:68px;width:68px;" />
         </a>
         <p class="foot-brand-desc">A faith-based discipleship platform for churches, camps, and schools. Built to help communities walk together in faith.</p>
       </div>
