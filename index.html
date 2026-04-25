@@ -1,372 +1,604 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mentor — Faith-Based Discipleship Platform</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mentor — One platform. Every tool your ministry needs.</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 :root {
-  --bg: #0a1208; --bg2: #0e1a0c; --surface: #121f10; --card: #162014;
-  --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.14);
-  --orange: #e8821a; --orange2: #f5a033; --green: #3d9e60;
-  --white: #f2ede6; --muted: rgba(242,237,230,0.52); --muted2: rgba(242,237,230,0.28);
+  --navy: #0d2030;
+  --navy-mid: #1e3a4a;
+  --navy-light: #2a4a5a;
+  --orange: #f07820;
+  --orange-dim: #c4601a;
+  --text: #e8f2f5;
+  --muted: #8ab8c8;
+  --border: #2a4a5a;
 }
+
 html { scroll-behavior: smooth; }
-body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; display: flex; align-items: center; justify-content: space-between; padding: 0 52px; height: 68px; background: rgba(10,18,8,0.9); backdrop-filter: blur(24px); border-bottom: 1px solid var(--border); transition: background 0.3s; }
-.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-logo img { height: 34px; width: 34px; object-fit: contain; }
-.nav-logo-text { font-weight: 800; font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--white); }
-.nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
-.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
-.nav-links a:hover { color: var(--white); }
-.nav-cta { background: var(--orange) !important; color: var(--bg) !important; padding: 9px 22px; border-radius: 4px; font-weight: 700 !important; }
-.nav-cta:hover { background: var(--orange2) !important; }
-.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 100px 52px 80px; max-width: 1300px; margin: 0 auto; gap: 60px; position: relative; }
-.hero-bg { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(ellipse 60% 70% at 70% 50%, rgba(232,130,26,0.07) 0%, transparent 55%), radial-gradient(ellipse 50% 60% at 20% 80%, rgba(61,158,96,0.05) 0%, transparent 50%); }
-.hero-left { position: relative; z-index: 1; }
-.hero-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 28px; }
-.hero-tag::before { content: ''; width: 24px; height: 2px; background: var(--orange); }
-h1 { font-size: clamp(2.6rem, 4.5vw, 4rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px; text-transform: uppercase; }
-h1 .accent { color: var(--orange); }
-.hero-desc { font-size: 0.97rem; line-height: 1.75; color: var(--muted); max-width: 440px; margin-bottom: 44px; }
-.hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: var(--bg); padding: 14px 30px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; box-shadow: 0 6px 28px rgba(232,130,26,0.3); }
-.btn-primary:hover { background: var(--orange2); transform: translateY(-2px); }
-.btn-outline { display: inline-flex; align-items: center; gap: 8px; color: var(--white); padding: 14px 26px; border: 1px solid var(--border2); border-radius: 4px; font-weight: 600; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
-.btn-outline:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); transform: translateY(-2px); }
-.hero-trust { margin-top: 40px; display: flex; align-items: center; gap: 16px; }
-.trust-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted2); }
-.trust-chips { display: flex; gap: 8px; }
-.trust-chip { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid var(--border2); padding: 4px 12px; border-radius: 2px; color: var(--muted); }
-.hero-right { position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; }
-.hero-logo-wrap { position: relative; width: 420px; height: 420px; display: flex; align-items: center; justify-content: center; }
-.hero-logo-glow { position: absolute; inset: -30px; border-radius: 50%; background: radial-gradient(ellipse, rgba(232,130,26,0.18) 0%, transparent 65%); animation: pulse-glow 4s ease-in-out infinite; }
-@keyframes pulse-glow { 0%, 100% { opacity: 0.7; transform: scale(1); } 50% { opacity: 1; transform: scale(1.05); } }
-.hero-logo-img { width: 380px; height: 380px; object-fit: contain; animation: float 6s ease-in-out infinite; position: relative; z-index: 1; filter: drop-shadow(0 20px 60px rgba(232,130,26,0.25)); }
-@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-14px); } }
-.marquee-section { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 16px 0; overflow: hidden; }
-.marquee-track { display: flex; white-space: nowrap; animation: marquee 30s linear infinite; }
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.marquee-item { display: inline-flex; align-items: center; gap: 10px; padding: 0 32px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted2); }
-.marquee-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--orange); opacity: 0.5; flex-shrink: 0; }
-.section { padding: 110px 52px; max-width: 1300px; margin: 0 auto; }
-.section-full { padding: 110px 52px; }
-.section-full .inner { max-width: 1300px; margin: 0 auto; }
-.section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
-.section-label::before { content: ''; width: 20px; height: 2px; background: var(--orange); }
-h2 { font-size: clamp(1.9rem, 3.5vw, 3rem); font-weight: 900; line-height: 1.08; letter-spacing: -0.02em; text-transform: uppercase; margin-bottom: 16px; }
-h2 .accent { color: var(--orange); }
-.section-desc { font-size: 0.95rem; line-height: 1.75; color: var(--muted); max-width: 500px; margin-bottom: 60px; }
-.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-.feature-card { background: var(--surface); padding: 40px 32px; position: relative; overflow: hidden; transition: background 0.3s; }
-.feature-card:hover { background: var(--card); }
-.feature-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--orange), transparent); opacity: 0; transition: opacity 0.3s; }
-.feature-card:hover::after { opacity: 1; }
-.feature-num { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); margin-bottom: 20px; opacity: 0.7; }
-.feature-card h3 { font-size: 0.95rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 12px; }
-.feature-card p { font-size: 0.85rem; line-height: 1.7; color: var(--muted); }
-.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
-.step-card { background: var(--surface); padding: 40px 28px; position: relative; transition: background 0.3s; }
-.step-card:hover { background: var(--card); }
-.step-num-large { font-size: 4rem; font-weight: 900; color: var(--orange); opacity: 0.12; line-height: 1; margin-bottom: 20px; }
-.step-card h3 { font-size: 0.88rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
-.step-card p { font-size: 0.82rem; line-height: 1.7; color: var(--muted); }
-.step-connector { position: absolute; right: -1px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; font-size: 0.6rem; color: var(--bg); font-weight: 800; z-index: 2; }
-.audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.audience-card { border: 1px solid var(--border); border-radius: 8px; padding: 40px 32px; transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; }
-.audience-card:hover { border-color: rgba(232,130,26,0.35); transform: translateY(-4px); }
-.aud-type { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
-.audience-card h3 { font-size: 1.3rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 14px; }
-.audience-card p { font-size: 0.85rem; line-height: 1.7; color: var(--muted); margin-bottom: 24px; }
-.aud-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.aud-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.82rem; color: var(--muted); font-weight: 500; }
-.aud-list li::before { content: ''; width: 14px; height: 2px; background: var(--orange); flex-shrink: 0; margin-top: 9px; }
-.scripture-section { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 52px; text-align: center; }
-.scripture-rule { width: 40px; height: 2px; background: var(--orange); margin: 0 auto 28px; }
-.scripture-text { font-family: 'Lora', serif; font-size: clamp(1.4rem, 2.8vw, 2.2rem); font-style: italic; line-height: 1.5; color: var(--white); max-width: 680px; margin: 0 auto 20px; }
-.scripture-ref { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); }
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
-.pricing-card { border: 1px solid var(--border); border-radius: 8px; padding: 40px 32px; position: relative; overflow: hidden; transition: all 0.3s; }
-.pricing-card:hover { transform: translateY(-4px); }
-.pricing-card.featured { border-color: rgba(232,130,26,0.45); background: linear-gradient(160deg, rgba(232,130,26,0.06) 0%, transparent 50%); }
-.popular-tag { position: absolute; top: 20px; right: 20px; background: var(--orange); color: var(--bg); font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; }
-.tier-name { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted2); margin-bottom: 12px; }
-.tier-price { font-size: 3.2rem; font-weight: 900; line-height: 1; margin-bottom: 6px; }
-.tier-price sup { font-size: 1.1rem; vertical-align: super; color: var(--muted); font-weight: 600; }
-.tier-price .period { font-size: 0.9rem; color: var(--muted); font-weight: 500; }
-.tier-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.65; margin-bottom: 28px; }
-.tier-divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
-.tier-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
-.tier-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.82rem; color: var(--muted); font-weight: 500; }
-.tier-features li .check { color: var(--orange); font-size: 0.7rem; flex-shrink: 0; margin-top: 2px; font-weight: 800; }
-.tier-features li.off { opacity: 0.35; }
-.btn-tier { display: block; text-align: center; width: 100%; padding: 13px; border-radius: 4px; font-weight: 700; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; font-family: 'Montserrat', sans-serif; border: none; cursor: pointer; }
-.btn-tier-outline { border: 1px solid var(--border2); color: var(--white); background: transparent; }
-.btn-tier-outline:hover { border-color: rgba(255,255,255,0.28); background: rgba(255,255,255,0.04); }
-.btn-tier-fill { background: var(--orange); color: var(--bg); }
-.btn-tier-fill:hover { background: var(--orange2); }
-.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.testimonial-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 32px 28px; transition: all 0.3s; }
-.testimonial-card:hover { border-color: rgba(232,130,26,0.25); transform: translateY(-3px); }
-.t-stars { display: flex; gap: 3px; margin-bottom: 16px; }
-.t-star { width: 10px; height: 10px; background: var(--orange); clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
-.t-quote { font-family: 'Lora', serif; font-size: 0.95rem; font-style: italic; line-height: 1.7; color: rgba(242,237,230,0.82); margin-bottom: 20px; }
-.t-author { display: flex; align-items: center; gap: 12px; }
-.t-avatar { width: 36px; height: 36px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.78rem; color: var(--bg); flex-shrink: 0; }
-.t-name { font-size: 0.82rem; font-weight: 700; }
-.t-role { font-size: 0.72rem; color: var(--muted2); margin-top: 2px; }
-.cta-section { padding: 100px 52px; text-align: center; position: relative; overflow: hidden; background: var(--bg2); border-top: 1px solid var(--border); }
-.cta-glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(232,130,26,0.09) 0%, transparent 65%); }
-.cta-inner { position: relative; z-index: 1; max-width: 560px; margin: 0 auto; }
-.cta-inner h2 { margin-bottom: 16px; }
-.cta-inner p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; margin-bottom: 36px; }
-.cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-.footer-wrap { border-top: 1px solid var(--border); }
-footer { padding: 60px 52px 40px; max-width: 1300px; margin: 0 auto; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 52px; }
-.footer-brand-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.75; margin-top: 16px; max-width: 230px; }
-.footer-col h4 { font-size: 0.65rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted2); margin-bottom: 16px; }
-.footer-col a { display: block; text-decoration: none; font-size: 0.83rem; color: var(--muted); margin-bottom: 10px; font-weight: 500; transition: color 0.2s; }
-.footer-col a:hover { color: var(--white); }
-.footer-bottom { border-top: 1px solid var(--border); padding-top: 24px; display: flex; align-items: center; justify-content: space-between; }
-.footer-copy { font-size: 0.75rem; color: var(--muted2); }
-.footer-verse { font-family: 'Lora', serif; font-size: 0.8rem; font-style: italic; color: var(--muted2); }
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
-@media (max-width: 900px) {
-  nav { padding: 0 24px; } .nav-links { display: none; }
-  .hero { grid-template-columns: 1fr; padding: 90px 24px 60px; gap: 40px; }
-  .hero-logo-img { width: 260px; height: 260px; } .hero-logo-wrap { width: 280px; height: 280px; }
-  .section { padding: 72px 24px; } .section-full { padding: 72px 24px; }
-  .feature-grid, .testimonial-grid, .audience-grid, .pricing-grid { grid-template-columns: 1fr; }
-  .steps-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-  .cta-section, .scripture-section { padding: 60px 24px; }
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #0d2030;
+  color: #e8f2f5;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 0 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+  background: rgba(13,32,48,0.95);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #2a4a5a;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo img { height: 36px; width: 36px; object-fit: cover; border-radius: 50%; }
+.nav-logo-text { font-size: 1.1rem; font-weight: 900; letter-spacing: 0.14em; color: #e8f2f5; text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { color: #8ab8c8; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: #e8f2f5; }
+.nav-cta {
+  background: #f07820; color: #fff !important; padding: 0.5rem 1.3rem;
+  border-radius: 6px; font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: #c4601a !important; }
+
+/* HERO */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 120px 2rem 80px;
+  position: relative;
+  background: #0d2030;
+}
+.hero-rings {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 42%, #1e3a4a 0%, transparent 70%),
+    radial-gradient(circle 400px at 50% 38%, rgba(240,120,32,0.07) 0%, transparent 70%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(138,184,200,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138,184,200,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.hero-content { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; }
+.hero-mark {
+  width: 100px; height: 100px; border-radius: 50%;
+  overflow: hidden; margin: 0 auto 2rem;
+  border: 2px solid #2a4a5a;
+}
+.hero-mark img { width: 100%; height: 100%; object-fit: cover; }
+.hero-eyebrow {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: #f07820; margin-bottom: 1rem;
+}
+.hero-h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900; line-height: 1.1; letter-spacing: -0.02em;
+  color: #e8f2f5; margin-bottom: 1.25rem;
+}
+.hero-h1 em { font-style: normal; color: #f07820; }
+.hero-sub {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.1rem; color: #8ab8c8;
+  max-width: 520px; margin: 0 auto 0.75rem; line-height: 1.75;
+}
+.hero-verse {
+  font-family: Georgia, 'Times New Roman', serif; font-style: italic;
+  font-size: 0.88rem; color: rgba(138,184,200,0.6);
+  margin-bottom: 2.5rem;
+}
+.hero-btns { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.btn-p {
+  background: #f07820; color: #fff; text-decoration: none;
+  padding: 0.9rem 2rem; border-radius: 8px;
+  font-size: 0.88rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(240,120,32,0.3);
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-p:hover { background: #c4601a; transform: translateY(-2px); }
+.btn-s {
+  background: transparent; color: #e8f2f5; text-decoration: none;
+  padding: 0.9rem 2rem; border-radius: 8px; border: 1px solid #2a4a5a;
+  font-size: 0.88rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.btn-s:hover { border-color: #8ab8c8; transform: translateY(-2px); }
+.scroll-hint {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  color: rgba(138,184,200,0.5); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+}
+.scroll-line {
+  width: 1px; height: 36px;
+  background: linear-gradient(to bottom, rgba(138,184,200,0.5), transparent);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+
+/* SECTIONS SHARED */
+.section { padding: 96px 2rem; }
+.section-light { background: #1e3a4a; }
+.section-dark { background: #0d2030; }
+.inner { max-width: 1080px; margin: 0 auto; }
+.label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #f07820; margin-bottom: 0.75rem; }
+.title { font-size: clamp(1.75rem, 3.2vw, 2.7rem); font-weight: 900; letter-spacing: -0.02em; color: #e8f2f5; line-height: 1.15; margin-bottom: 1rem; }
+.sub { font-family: Georgia, 'Times New Roman', serif; font-size: 1rem; color: #8ab8c8; max-width: 540px; line-height: 1.8; }
+.hdr { margin-bottom: 3.5rem; }
+
+/* FEATURES */
+.feat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #2a4a5a; border-radius: 14px; overflow: hidden;
+}
+.feat-card {
+  padding: 2.25rem 1.75rem;
+  border-right: 1px solid #2a4a5a;
+  border-bottom: 1px solid #2a4a5a;
+  transition: background 0.2s;
+}
+.feat-card:hover { background: #253f52; }
+.feat-card:nth-child(3n) { border-right: none; }
+.feat-card:nth-last-child(-n+3) { border-bottom: none; }
+.feat-ico {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(240,120,32,0.12);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.1rem;
+}
+.feat-ico svg { width: 20px; height: 20px; }
+.feat-name { font-size: 0.95rem; font-weight: 700; color: #e8f2f5; margin-bottom: 0.45rem; }
+.feat-desc { font-size: 0.85rem; color: #8ab8c8; line-height: 1.7; }
+.feat-tag {
+  display: inline-block; margin-top: 0.85rem;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #f07820; background: rgba(240,120,32,0.1); padding: 3px 9px; border-radius: 20px;
+}
+
+/* HOW IT WORKS */
+.steps { display: flex; flex-direction: column; }
+.step {
+  display: grid; grid-template-columns: 72px 1fr;
+  gap: 2rem; padding: 2.75rem 0;
+  border-bottom: 1px solid #2a4a5a;
+}
+.step:last-child { border-bottom: none; }
+.step-n {
+  font-size: 3rem; font-weight: 900; letter-spacing: -0.04em;
+  color: rgba(240,120,32,0.15); line-height: 1;
+  transition: color 0.3s; padding-top: 2px;
+}
+.step:hover .step-n { color: rgba(240,120,32,0.4); }
+.step-title { font-size: 1.25rem; font-weight: 800; color: #e8f2f5; margin-bottom: 0.55rem; }
+.step-desc { font-family: Georgia, 'Times New Roman', serif; font-size: 0.96rem; color: #8ab8c8; line-height: 1.75; max-width: 560px; }
+
+/* WHO */
+.tabs { display: flex; border-bottom: 1px solid #2a4a5a; margin-bottom: 2.75rem; }
+.tab {
+  padding: 0.85rem 1.75rem; font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: #8ab8c8; background: none; border: none; border-bottom: 2px solid transparent;
+  margin-bottom: -1px; cursor: pointer; transition: color 0.2s, border-color 0.2s;
+}
+.tab.active { color: #f07820; border-bottom-color: #f07820; }
+.tab:hover:not(.active) { color: #e8f2f5; }
+.panel { display: none; }
+.panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+.panel-title { font-size: 1.6rem; font-weight: 800; color: #e8f2f5; margin-bottom: 0.85rem; }
+.panel-desc { font-family: Georgia, 'Times New Roman', serif; font-size: 0.98rem; color: #8ab8c8; line-height: 1.75; margin-bottom: 1.5rem; }
+.bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.bullets li { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.88rem; color: #e8f2f5; line-height: 1.5; }
+.bullets li::before { content: ''; flex-shrink: 0; width: 5px; height: 5px; background: #f07820; border-radius: 50%; margin-top: 8px; }
+.panel-vis {
+  background: #253f52; border: 1px solid #2a4a5a; border-radius: 12px;
+  height: 300px; display: flex; align-items: center; justify-content: center;
+}
+.panel-vis span { font-family: monospace; font-size: 0.72rem; color: rgba(138,184,200,0.4); text-align: center; line-height: 1.8; }
+
+/* PRICING */
+.price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 780px; }
+.price-card {
+  background: #1e3a4a; border: 1px solid #2a4a5a; border-radius: 16px; padding: 2.25rem 2rem;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.price-card:hover { transform: translateY(-3px); }
+.price-card.hot { border-color: #f07820; background: linear-gradient(140deg,#1e3a4a,#253f52); }
+.price-badge {
+  display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #fff; background: #f07820; padding: 2px 9px; border-radius: 20px; margin-bottom: 1.1rem;
+}
+.price-name { font-size: 1rem; font-weight: 800; color: #e8f2f5; margin-bottom: 0.3rem; }
+.price-who { font-size: 0.8rem; color: #8ab8c8; margin-bottom: 1.4rem; }
+.price-amt { font-size: 2.8rem; font-weight: 900; color: #e8f2f5; line-height: 1; letter-spacing: -0.03em; }
+.price-amt sup { font-size: 1.2rem; vertical-align: super; }
+.price-amt span { font-size: 0.88rem; font-weight: 500; color: #8ab8c8; }
+.price-note { font-size: 0.75rem; color: #8ab8c8; margin: 0.3rem 0 1.75rem; }
+.price-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.75rem; }
+.price-list li { display: flex; align-items: center; gap: 0.65rem; font-size: 0.86rem; color: #e8f2f5; }
+.chk { flex-shrink: 0; width: 17px; height: 17px; border-radius: 50%; background: rgba(240,120,32,0.15); display: flex; align-items: center; justify-content: center; }
+.chk svg { width: 9px; height: 9px; }
+.btn-buy {
+  display: block; width: 100%; text-align: center; text-decoration: none;
+  padding: 0.8rem 1.5rem; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  transition: 0.2s;
+}
+.btn-buy.fill { background: #f07820; color: #fff; }
+.btn-buy.fill:hover { background: #c4601a; }
+.btn-buy.line { background: transparent; color: #e8f2f5; border: 1px solid #2a4a5a; }
+.btn-buy.line:hover { border-color: #8ab8c8; }
+
+/* CTA */
+#cta { padding: 96px 2rem; background: #1e3a4a; text-align: center; }
+.cta-wrap { max-width: 660px; margin: 0 auto; }
+.cta-verse { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: clamp(1.05rem,2.4vw,1.45rem); color: #e8f2f5; line-height: 1.65; margin-bottom: 0.4rem; }
+.cta-ref { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; color: #f07820; margin-bottom: 2.25rem; }
+.cta-h { font-size: clamp(1.5rem,2.8vw,2.2rem); font-weight: 900; color: #e8f2f5; letter-spacing: -0.02em; margin-bottom: 0.85rem; }
+.cta-p { font-family: Georgia, 'Times New Roman', serif; font-size: 1rem; color: #8ab8c8; line-height: 1.75; margin-bottom: 2.25rem; }
+.cta-btns { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+/* FOOTER */
+footer { background: #0a1a27; border-top: 1px solid #2a4a5a; padding: 3.5rem 2rem 2rem; }
+.foot-inner { max-width: 1080px; margin: 0 auto; }
+.foot-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; margin-bottom: 2.75rem; }
+.foot-brand-desc { font-family: Georgia, 'Times New Roman', serif; font-size: 0.88rem; color: #8ab8c8; line-height: 1.7; max-width: 270px; margin-top: 0.85rem; }
+.foot-col-label { font-size: 0.67rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #f07820; margin-bottom: 1rem; }
+.foot-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.foot-links a { color: #8ab8c8; text-decoration: none; font-size: 0.86rem; transition: color 0.2s; }
+.foot-links a:hover { color: #e8f2f5; }
+.foot-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; border-top: 1px solid #2a4a5a; padding-top: 1.5rem; font-size: 0.76rem; color: rgba(138,184,200,0.5); }
+.foot-verse { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 0.76rem; color: rgba(138,184,200,0.4); }
+
+/* FADE IN */
+.fade { opacity: 0; transform: translateY(22px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade.in { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .feat-grid { grid-template-columns: 1fr 1fr; }
+  .feat-card:nth-child(3n) { border-right: 1px solid #2a4a5a; }
+  .feat-card:nth-child(2n) { border-right: none; }
+  .panel.active { grid-template-columns: 1fr; }
+  .panel-vis { height: 180px; }
+  .price-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .foot-top { grid-template-columns: 1fr 1fr; }
+  .foot-brand { grid-column: 1/-1; }
+  nav .nav-links { display: none; }
+  .ham { display: flex !important; }
+}
+@media (max-width: 540px) {
+  .feat-grid { grid-template-columns: 1fr; }
+  .feat-card { border-right: none !important; }
+  .foot-top { grid-template-columns: 1fr; }
+  .tabs { overflow-x: auto; }
+}
+.ham { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.ham span { display: block; width: 22px; height: 2px; background: #e8f2f5; border-radius: 2px; }
+.mob-nav { display: none; flex-direction: column; position: fixed; top: 68px; left: 0; right: 0; background: rgba(13,32,48,0.98); border-bottom: 1px solid #2a4a5a; padding: 1.5rem 2rem; gap: 0.85rem; z-index: 99; }
+.mob-nav.open { display: flex; }
+.mob-nav a { color: #e8f2f5; text-decoration: none; font-size: 0.95rem; font-weight: 600; padding: 0.5rem 0; border-bottom: 1px solid #2a4a5a; }
 </style>
 </head>
 <body>
-<nav id="navbar">
-  <a href="#" class="nav-logo">
-    <img src="New_Logo.png" alt="Mentor">
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img src="uploads/New Logo.jpg" alt="Mentor" />
     <span class="nav-logo-text">Mentor</span>
   </a>
-  <ul class="nav-links">
-    <li><a href="#features">Features</a></li>
-    <li><a href="#audience">Who It's For</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="https://app.mentordiscipleship.com" class="nav-cta">Get Started</a></li>
-  </ul>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#who">Who It's For</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/cdn-cgi/l/email-protection#49212c253909242c273d263b2d203a2a2039252c3a212039672a2624">Contact</a>
+    <a href="https://app.mentordiscipleship.com" class="nav-cta">Get Started</a>
+  </div>
+  <button class="ham" id="ham"><span></span><span></span><span></span></button>
 </nav>
-<div class="hero-bg"></div>
-<section class="hero">
-  <div class="hero-left">
-    <div class="hero-tag">Faith-Based Discipleship</div>
-    <h1>Walk Together<br>In <span class="accent">Faith.</span></h1>
-    <p class="hero-desc">Mentor connects churches, camps, and schools with a platform built to deepen discipleship. Bible studies, prayer boards, mentorship tracking, and more — all in one place.</p>
-    <div class="hero-actions">
-      <a href="https://app.mentordiscipleship.com" class="btn-primary">Start Free &rarr;</a>
-      <a href="#features" class="btn-outline">See Features</a>
-    </div>
-    <div class="hero-trust">
-      <span class="trust-label">Built for</span>
-      <div class="trust-chips">
-        <span class="trust-chip">Churches</span>
-        <span class="trust-chip">Camps</span>
-        <span class="trust-chip">Schools</span>
-      </div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-logo-wrap">
-      <div class="hero-logo-glow"></div>
-      <img class="hero-logo-img" src="Logo-1.png" alt="Mentor">
-    </div>
-  </div>
-</section>
-<div class="marquee-section">
-  <div class="marquee-track">
-    <span class="marquee-item"><span class="marquee-sep"></span>Mentorship Tracking</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Bible Study Groups</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Prayer Boards</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Faith Journals</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Church Groups</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Growth Tracking</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Memory Verses</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Camp Communities</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Answered Prayer</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Mentorship Tracking</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Bible Study Groups</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Prayer Boards</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Faith Journals</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Church Groups</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Growth Tracking</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Memory Verses</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Camp Communities</span>
-    <span class="marquee-item"><span class="marquee-sep"></span>Answered Prayer</span>
-  </div>
+<div class="mob-nav" id="mob">
+  <a href="#features" onclick="document.getElementById('mob').classList.remove('open')">Features</a>
+  <a href="#how-it-works" onclick="document.getElementById('mob').classList.remove('open')">How It Works</a>
+  <a href="#who" onclick="document.getElementById('mob').classList.remove('open')">Who It's For</a>
+  <a href="#pricing" onclick="document.getElementById('mob').classList.remove('open')">Pricing</a>
+  <a href="/cdn-cgi/l/email-protection#026a676e72426f676c766d70666b71616b726e67716a6b722c616d6f" onclick="document.getElementById('mob').classList.remove('open')">Contact</a>
+  <a href="https://app.mentordiscipleship.com" class="nav-cta" style="text-align:center;border:none">Start for Free →</a>
 </div>
-<section class="section" id="features">
-  <div class="section-label reveal">Everything You Need</div>
-  <h2 class="reveal d1">A Complete Platform For<br><span class="accent">Spiritual Growth.</span></h2>
-  <p class="section-desc reveal d2">Every tool a ministry needs to connect mentors and mentees, grow in community, and walk faithfully together.</p>
-  <div class="feature-grid">
-    <div class="feature-card reveal"><div class="feature-num">01</div><h3>Mentorship</h3><p>Connect mentors and mentees in structured, intentional relationships. Track progress, set goals, and encourage consistent communication throughout the discipleship journey.</p></div>
-    <div class="feature-card reveal d1"><div class="feature-num">02</div><h3>Bible Study Groups</h3><p>Create and manage group Bible studies with shared content, discussion boards, and progress tracking. AI-powered scanning gets your group started instantly.</p></div>
-    <div class="feature-card reveal d2"><div class="feature-num">03</div><h3>Prayer Boards</h3><p>Community-wide and group prayer boards where members share requests, react with encouragement, and celebrate answered prayers together.</p></div>
-    <div class="feature-card reveal"><div class="feature-num">04</div><h3>Faith Journaling</h3><p>Personal faith journals for reflection and documentation. A private space for spiritual notes, insights from Scripture, and growth milestones along the journey.</p></div>
-    <div class="feature-card reveal d1"><div class="feature-num">05</div><h3>Church Groups</h3><p>Organize your entire community with group join codes, role management, and a shared platform tailored to your church, camp, or school.</p></div>
-    <div class="feature-card reveal d2"><div class="feature-num">06</div><h3>Growth Tracking</h3><p>Set rhythms and goals for Bible reading, prayer, and worship. Track streaks, celebrate milestones, and stay accountable with your community.</p></div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-rings"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content fade in">
+    <div class="hero-mark"><img src="uploads/New Logo.jpg" alt="Mentor compass mark" /></div>
+    <p class="hero-eyebrow">Faith-Based Discipleship Platform</p>
+    <h1 class="hero-h1">One platform.<br /><em>Every tool</em> your ministry needs.</h1>
+    <p class="hero-sub">Built for churches, camps, and schools — Mentor brings mentor relationships, Bible study, prayer, journaling, and growth tracking into one place.</p>
+    <p class="hero-verse">"Walk with the wise and become wise." — Proverbs 13:20</p>
+    <div class="hero-btns">
+      <a href="https://app.mentordiscipleship.com" class="btn-p">Start for Free →</a>
+      <a href="/cdn-cgi/l/email-protection#e68e838a96a68b8388928994828f95858f968a83958e8f96c885898b" class="btn-s">Contact Us</a>
+    </div>
   </div>
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
-<div class="section-full" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+
+<!-- FEATURES -->
+<section id="features" class="section section-light">
   <div class="inner">
-    <div class="section-label reveal">Simple Process</div>
-    <h2 class="reveal d1">Up and Running<br><span class="accent">In Minutes.</span></h2>
-    <p class="section-desc reveal d2">No lengthy setup or complex onboarding. Your community can start walking in faith together today.</p>
-    <div class="steps-grid">
-      <div class="step-card reveal"><div class="step-num-large">01</div><h3>Create Your Organization</h3><p>Sign up and set up your church, camp, or school. Customize your group and invite your leadership team.</p><div class="step-connector">&#8250;</div></div>
-      <div class="step-card reveal d1"><div class="step-num-large">02</div><h3>Invite Your Community</h3><p>Share a simple join code with your congregation or students. They are in within seconds, no lengthy registration required.</p><div class="step-connector">&#8250;</div></div>
-      <div class="step-card reveal d2"><div class="step-num-large">03</div><h3>Pair Mentors and Mentees</h3><p>Match leaders with those they are discipling. Set goals, track growth, and keep relationships intentional and consistent.</p><div class="step-connector">&#8250;</div></div>
-      <div class="step-card reveal d3"><div class="step-num-large">04</div><h3>Grow Together</h3><p>Launch Bible studies, build prayer boards, and track faith rhythms in one unified platform built for your community.</p></div>
+    <div class="hdr fade">
+      <p class="label">Everything You Need</p>
+      <h2 class="title">Built for ministry.<br />Designed for people.</h2>
+      <p class="sub">Every feature in Mentor is purpose-built for faith communities — not repurposed from a generic app.</p>
     </div>
-  </div>
-</div>
-<section class="section" id="audience">
-  <div class="section-label reveal">Who It's For</div>
-  <h2 class="reveal d1">Built For Every<br><span class="accent">Community of Faith.</span></h2>
-  <p class="section-desc reveal d2">From Sunday morning to summer camp to the classroom. Mentor adapts to how your ministry operates.</p>
-  <div class="audience-grid">
-    <div class="audience-card reveal"><div class="aud-type">Ministry Type</div><h3>Churches</h3><p>Equip your pastoral team to disciple at scale without losing the personal touch that makes mentorship meaningful and lasting.</p><ul class="aud-list"><li>Small group coordination</li><li>Pastoral mentorship tracking</li><li>Congregational prayer wall</li><li>Sermon-aligned Bible studies</li></ul></div>
-    <div class="audience-card reveal d1"><div class="aud-type">Ministry Type</div><h3>Camps</h3><p>Extend the impact of summer camp beyond the week itself. Keep campers connected to their counselors and community all year long.</p><ul class="aud-list"><li>Counselor and camper mentorship</li><li>Post-camp follow-up tools</li><li>Memory verse tracking</li><li>Faith goals and challenges</li></ul></div>
-    <div class="audience-card reveal d2"><div class="aud-type">Ministry Type</div><h3>Schools</h3><p>Give students a structured, faith-filled environment to grow under the guidance of trusted faculty and staff mentors.</p><ul class="aud-list"><li>Faculty mentor matching</li><li>Chapel and devotional tie-ins</li><li>Student accountability tools</li><li>Spiritual formation tracking</li></ul></div>
-  </div>
-</section>
-<div class="scripture-section">
-  <div class="scripture-rule"></div>
-  <p class="scripture-text">"As iron sharpens iron, so one person sharpens another."</p>
-  <div class="scripture-ref">Proverbs 27:17</div>
-</div>
-<section class="section" id="pricing">
-  <div class="section-label reveal">Pricing</div>
-  <h2 class="reveal d1">Simple, Honest<br><span class="accent">Pricing.</span></h2>
-  <p class="section-desc reveal d2">Start free, grow with your ministry. No hidden fees, no complicated contracts.</p>
-  <div class="pricing-grid">
-    <div class="pricing-card reveal">
-      <div class="tier-name">Free</div>
-      <div class="tier-price">TBD</div>
-      <p class="tier-desc">For individuals and small groups just getting started with discipleship.</p>
-      <hr class="tier-divider">
-      <ul class="tier-features">
-        <li><span class="check">+</span> 1 mentor relationship</li>
-        <li><span class="check">+</span> Personal journal and verse tracking</li>
-        <li><span class="check">+</span> Basic prayer board access</li>
-        <li><span class="check">+</span> Up to 10 group members</li>
-        <li class="off"><span class="check">-</span> Organization dashboard</li>
-        <li class="off"><span class="check">-</span> Analytics and reporting</li>
-        <li class="off"><span class="check">-</span> Priority support</li>
-      </ul>
-      <a href="https://app.mentordiscipleship.com" class="btn-tier btn-tier-outline">Get Started Free</a>
-    </div>
-    <div class="pricing-card featured reveal d1">
-      <div class="popular-tag">Most Popular</div>
-      <div class="tier-name">Pro</div>
-      <div class="tier-price">TBD</div>
-      <p class="tier-desc">For serious disciples and small ministries who want the full Mentor experience.</p>
-      <hr class="tier-divider">
-      <ul class="tier-features">
-        <li><span class="check">+</span> Unlimited mentor relationships</li>
-        <li><span class="check">+</span> All journal and verse features</li>
-        <li><span class="check">+</span> Full prayer and discussion boards</li>
-        <li><span class="check">+</span> Bible study group creation</li>
-        <li><span class="check">+</span> Faith goals and rhythm tracking</li>
-        <li><span class="check">+</span> Push notification reminders</li>
-        <li class="off"><span class="check">-</span> Org dashboard and admin tools</li>
-      </ul>
-      <a href="https://app.mentordiscipleship.com" class="btn-tier btn-tier-fill">Start Pro</a>
-    </div>
-    <div class="pricing-card reveal d2">
-      <div class="tier-name">Church</div>
-      <div class="tier-price">TBD</div>
-      <p class="tier-desc">For churches, camps, and schools managing a full community of faith.</p>
-      <hr class="tier-divider">
-      <ul class="tier-features">
-        <li><span class="check">+</span> Everything in Pro</li>
-        <li><span class="check">+</span> Unlimited members and groups</li>
-        <li><span class="check">+</span> Organization dashboard</li>
-        <li><span class="check">+</span> Custom join codes and branding</li>
-        <li><span class="check">+</span> Admin role management</li>
-        <li><span class="check">+</span> Usage analytics and reports</li>
-        <li><span class="check">+</span> Priority email support</li>
-      </ul>
-      <a href="mailto:help@mentordiscipleship.com" class="btn-tier btn-tier-outline">Contact Us</a>
-    </div>
-  </div>
-</section>
-<div class="section-full" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);" id="about">
-  <div class="inner" style="padding:110px 0;">
-    <div class="section-label reveal">Stories</div>
-    <h2 class="reveal d1">What Communities<br><span class="accent">Are Saying.</span></h2>
-    <p class="section-desc reveal d2">Built in community, grown in faith.</p>
-    <div class="testimonial-grid">
-      <div class="testimonial-card reveal"><div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div><p class="t-quote">"Mentor has completely changed how I disciple my students. Having everything in one place is a game changer for our youth ministry."</p><div class="t-author"><div class="t-avatar" style="background:var(--orange);">TR</div><div><div class="t-name">Tyler R.</div><div class="t-role">Youth Pastor</div></div></div></div>
-      <div class="testimonial-card reveal d1"><div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div><p class="t-quote">"We used it at camp this summer and the counselors loved how easy it was to keep up with their campers even after they went home."</p><div class="t-author"><div class="t-avatar" style="background:var(--green);">AM</div><div><div class="t-name">Ashley M.</div><div class="t-role">Camp Director</div></div></div></div>
-      <div class="testimonial-card reveal d2"><div class="t-stars"><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div><div class="t-star"></div></div><p class="t-quote">"Our small groups finally feel connected between Sundays. The prayer board alone has transformed how our congregation cares for one another."</p><div class="t-author"><div class="t-avatar" style="background:#4a7acc;">JK</div><div><div class="t-name">James K.</div><div class="t-role">Associate Pastor</div></div></div></div>
-    </div>
-  </div>
-</div>
-<div class="cta-section">
-  <div class="cta-glow"></div>
-  <div class="cta-inner reveal">
-    <div class="section-label" style="justify-content:center;">Get Started Today</div>
-    <h2>Ready to<br><span class="accent">Walk Together?</span></h2>
-    <p>Join churches, camps, and schools already using Mentor to deepen discipleship and grow their communities in faith. Free to start.</p>
-    <div class="cta-actions">
-      <a href="https://app.mentordiscipleship.com" class="btn-primary">Start for Free &rarr;</a>
-      <a href="mailto:help@mentordiscipleship.com" class="btn-outline">Contact Us</a>
-    </div>
-  </div>
-</div>
-<div class="footer-wrap">
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <a href="#" class="nav-logo" style="text-decoration:none;"><img src="New_Logo.png" alt="Mentor" style="height:30px;width:30px;object-fit:contain;"><span class="nav-logo-text">Mentor</span></a>
-        <p class="footer-brand-desc">A faith-based discipleship platform for churches, camps, and schools. Built to help communities walk together in faith.</p>
+    <div class="feat-grid fade">
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f07820" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="feat-name">Mentor &amp; Mentee Tracking</div>
+        <div class="feat-desc">Pair mentors with mentees, track meeting history, set goals, and monitor relationship health from a clean dashboard.</div>
+        <span class="feat-tag">Relationships</span>
       </div>
-      <div class="footer-col"><h4>Product</h4><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="https://app.mentordiscipleship.com">Open App</a><a href="#">Changelog</a></div>
-      <div class="footer-col"><h4>Ministry</h4><a href="#audience">Churches</a><a href="#audience">Camps</a><a href="#audience">Schools</a><a href="#">Partners</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="#about">About</a><a href="mailto:help@mentordiscipleship.com">Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div>
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f07820" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <div class="feat-name">Bible Study Groups</div>
+        <div class="feat-desc">Create and manage study groups, share passages, post discussion questions, and track attendance across your community.</div>
+        <span class="feat-tag">Community</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f07820" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <div class="feat-name">Prayer Boards</div>
+        <div class="feat-desc">Share prayer requests, mark answered prayers, and let your community lift one another up in real time.</div>
+        <span class="feat-tag">Prayer</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f07820" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+        <div class="feat-name">Faith Journaling</div>
+        <div class="feat-desc">Give your people a private, guided journaling space — with prompts, scripture tags, and personal reflection history.</div>
+        <span class="feat-tag">Personal Growth</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f07820" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+        <div class="feat-name">Church Group Management</div>
+        <div class="feat-desc">Organize your entire ministry — small groups, leadership teams, and age groups — with role-based access and org-wide visibility.</div>
+        <span class="feat-tag">Organization</span>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#f07820" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div class="feat-name">Faith Growth Tracking</div>
+        <div class="feat-desc">See how your people are growing — spiritual milestones, engagement patterns, and discipleship progress in one clear view.</div>
+        <span class="feat-tag">Insights</span>
+      </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">&copy; 2026 Mentor Discipleship. All rights reserved.</div>
-      <div class="footer-verse">"Walk with the wise and become wise." &mdash; Proverbs 13:20</div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="section section-dark">
+  <div class="inner">
+    <div class="hdr fade">
+      <p class="label">Getting Started</p>
+      <h2 class="title">Up and running<br />in minutes.</h2>
+      <p class="sub">No IT department required. Mentor is built so ministry leaders — not developers — can get their community going fast.</p>
     </div>
-  </footer>
-</div>
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.style.background = window.scrollY > 60 ? 'rgba(10,18,8,0.98)' : 'rgba(10,18,8,0.9)';
-});
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    <div class="steps fade">
+      <div class="step">
+        <div class="step-n">01</div>
+        <div>
+          <div class="step-title">Create your ministry account</div>
+          <div class="step-desc">Sign up at app.mentordiscipleship.com, choose your plan, and set up your organization profile. Takes under five minutes — no credit card required to start.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">02</div>
+        <div>
+          <div class="step-title">Invite your people</div>
+          <div class="step-desc">Add mentors, mentees, group leaders, and members by email or invite link. Assign roles, create groups, and structure your ministry the way it actually works.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">03</div>
+        <div>
+          <div class="step-title">Walk together in faith</div>
+          <div class="step-desc">Track relationships, run Bible studies, post prayer requests, and watch your community grow — all from one unified platform built for discipleship.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="who" class="section section-light">
+  <div class="inner">
+    <div class="hdr fade">
+      <p class="label">Who It's For</p>
+      <h2 class="title">Built for every<br />faith community.</h2>
+      <p class="sub">Whether you lead a congregation, a summer camp, or a school — Mentor adapts to how your ministry works.</p>
+    </div>
+    <div class="fade">
+      <div class="tabs">
+        <button class="tab active" data-panel="churches">Churches</button>
+        <button class="tab" data-panel="camps">Camps</button>
+        <button class="tab" data-panel="schools">Schools</button>
+      </div>
+      <div class="panel active" id="p-churches">
+        <div>
+          <div class="panel-title">For Lead Pastors &amp; Discipleship Directors</div>
+          <div class="panel-desc">Mentor gives your church everything it needs to build intentional discipleship, run thriving small groups, and see your congregation's spiritual growth at a glance.</div>
+          <ul class="bullets">
+            <li>One-on-one mentor/mentee pairing across all life stages</li>
+            <li>Small group and Bible study management</li>
+            <li>Congregation-wide prayer wall</li>
+            <li>Member engagement and growth dashboards</li>
+            <li>Role-based access for staff and volunteers</li>
+          </ul>
+        </div>
+        <div class="panel-vis"><span>[ church dashboard<br />screenshot ]</span></div>
+      </div>
+      <div class="panel" id="p-camps">
+        <div>
+          <div class="panel-title">For Camp Program Directors</div>
+          <div class="panel-desc">Keep your summer programs organized and spiritually intentional — from cabin group discipleship to counselor-camper mentorship that lasts long after the session ends.</div>
+          <ul class="bullets">
+            <li>Cabin and cohort group management</li>
+            <li>Seasonal mentor pairing for counselors and campers</li>
+            <li>Prayer boards for each group or session</li>
+            <li>Faith milestones and summer growth tracking</li>
+            <li>Post-camp relationship continuity tools</li>
+          </ul>
+        </div>
+        <div class="panel-vis"><span>[ camp program view<br />screenshot ]</span></div>
+      </div>
+      <div class="panel" id="p-schools">
+        <div>
+          <div class="panel-title">For Discipleship &amp; Chapel Leaders</div>
+          <div class="panel-desc">Build a culture of faith formation across your student body. Mentor helps faith-based schools track discipleship programs, chapel engagement, and student spiritual development.</div>
+          <ul class="bullets">
+            <li>Student discipleship program tracking</li>
+            <li>Chapel group management and attendance</li>
+            <li>Faculty mentor pairing with students</li>
+            <li>Journaling prompts tied to curriculum</li>
+            <li>Faith formation reporting for leadership</li>
+          </ul>
+        </div>
+        <div class="panel-vis"><span>[ school dashboard<br />screenshot ]</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="section section-dark">
+  <div class="inner">
+    <div class="hdr fade">
+      <p class="label">Pricing</p>
+      <h2 class="title">Simple, honest pricing<br />for ministries of any size.</h2>
+      <p class="sub">No hidden fees. No contracts. Plans built around how real ministry communities actually work.</p>
+    </div>
+    <div class="price-grid fade">
+      <div class="price-card">
+        <div class="price-name">Pro Individual</div>
+        <div class="price-who">For personal discipleship &amp; independent mentors</div>
+        <div class="price-amt"><sup>$</sup>4<span>.99 / mo</span></div>
+        <div class="price-note">Per person · Billed monthly</div>
+        <ul class="price-list">
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Mentor/mentee relationship tools</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Faith journaling with prompts</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Personal prayer board</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Bible study access</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Growth tracking dashboard</li>
+        </ul>
+        <a href="https://app.mentordiscipleship.com" class="btn-buy line">Get Started →</a>
+      </div>
+      <div class="price-card hot">
+        <div class="price-badge">Most Popular</div>
+        <div class="price-name">Organization</div>
+        <div class="price-who">For churches, camps, and schools</div>
+        <div class="price-amt"><sup>$</sup>3<span> / user / mo</span></div>
+        <div class="price-note">Minimum 10 users · Billed monthly</div>
+        <ul class="price-list">
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Everything in Pro Individual</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Org-wide group management</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Admin dashboard &amp; reporting</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Role-based permissions</li>
+          <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Priority support</li>
+        </ul>
+        <a href="https://app.mentordiscipleship.com" class="btn-buy fill">Start for Free →</a>
+      </div>
+    </div>
+    <p style="margin-top:1.25rem;font-size:0.8rem;color:#8ab8c8;">Questions about pricing? <a href="/cdn-cgi/l/email-protection#157d7079655578707b617a67717c66767c657970667d7c653b767a78" style="color:#f07820;text-decoration:none;">Contact us</a> — we'll find the right fit for your ministry.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-wrap fade">
+    <p class="cta-verse">"Walk with the wise and become wise, for a companion of fools suffers harm."</p>
+    <p class="cta-ref">Proverbs 13:20</p>
+    <h2 class="cta-h">Ready to walk together?</h2>
+    <p class="cta-p">Join the churches, camps, and schools already using Mentor to build deeper faith communities.</p>
+    <div class="cta-btns">
+      <a href="https://app.mentordiscipleship.com" class="btn-p">Start for Free →</a>
+      <a href="/cdn-cgi/l/email-protection#f49c919884b499919a809b86909d87979d849891879c9d84da979b99" class="btn-s">Talk to Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="nav-logo" href="#">
+          <img src="uploads/New Logo.jpg" alt="Mentor" style="height:30px;width:30px;" />
+          <span class="nav-logo-text" style="font-size:1rem;">Mentor</span>
+        </a>
+        <p class="foot-brand-desc">A faith-based discipleship platform for churches, camps, and schools. Built to help communities walk together in faith.</p>
+      </div>
+      <div>
+        <div class="foot-col-label">Platform</div>
+        <ul class="foot-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#who">Who It's For</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="https://app.mentordiscipleship.com">Open App</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-label">Company</div>
+        <ul class="foot-links">
+          <li><a href="/cdn-cgi/l/email-protection#066e636a76466b6368726974626f75656f766a63756e6f762865696b">Contact Us</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Mentor. All rights reserved.</span>
+      <span class="foot-verse">"Walk with the wise and become wise." — Proverbs 13:20</span>
+      <a href="/cdn-cgi/l/email-protection#e58d808995a588808b918a97818c96868c958980968d8c95cb868a88" style="color:rgba(138,184,200,0.5);text-decoration:none;"><span class="__cf_email__" data-cfemail="6e060b021e2e030b001a011c0a071d0d071e020b1d06071e400d0103">[email&#160;protected]</span></a>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // hamburger
+  document.getElementById('ham').addEventListener('click', function() {
+    document.getElementById('mob').classList.toggle('open');
   });
-});
+
+  // scroll fade
+  var fades = document.querySelectorAll('.fade');
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  fades.forEach(function(el) { if (!el.classList.contains('in')) io.observe(el); });
+
+  // tabs
+  document.querySelectorAll('.tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+      document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      document.getElementById('p-' + tab.dataset.panel).classList.add('active');
+    });
+  });
 </script>
 </body>
 </html>
