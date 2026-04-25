@@ -33,14 +33,13 @@ nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   padding: 0 2.5rem;
   display: flex; align-items: center; justify-content: space-between;
-  height: 68px;
+  height: 96px;
   background: rgba(13,32,48,0.95);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid #2a4a5a;
 }
 .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-.nav-logo img { height: 36px; width: 36px; object-fit: cover; border-radius: 50%; }
-.nav-logo-text { font-size: 1.1rem; font-weight: 900; letter-spacing: 0.14em; color: #e8f2f5; text-transform: uppercase; }
+.nav-logo img { height: 100px; width: 100px; object-fit: cover; border-radius: 50%; }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-links a { color: #8ab8c8; text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
 .nav-links a:hover { color: #e8f2f5; }
@@ -76,19 +75,19 @@ nav {
 }
 .hero-content { position: relative; z-index: 1; max-width: 780px; margin: 0 auto; }
 .hero-mark {
-  width: 100px; height: 100px; border-radius: 50%;
-  overflow: hidden; margin: 0 auto 2rem;
-  border: 2px solid #2a4a5a;
+  width: 330px; height: 330px; border-radius: 0;
+  overflow: visible; margin: 0 auto 0.35rem;
+  border: none;
 }
 .hero-mark img { width: 100%; height: 100%; object-fit: cover; }
 .hero-eyebrow {
   font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em;
-  text-transform: uppercase; color: #f07820; margin-bottom: 1rem;
+  text-transform: uppercase; color: #f07820; margin-bottom: 0.4rem;
 }
 .hero-h1 {
   font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 900; line-height: 1.1; letter-spacing: -0.02em;
-  color: #e8f2f5; margin-bottom: 1.25rem;
+  color: #e8f2f5; margin-bottom: 0.9rem;
 }
 .hero-h1 em { font-style: normal; color: #f07820; }
 .hero-sub {
@@ -117,17 +116,6 @@ nav {
   transition: border-color 0.2s, transform 0.15s;
 }
 .btn-s:hover { border-color: #8ab8c8; transform: translateY(-2px); }
-.scroll-hint {
-  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  color: rgba(138,184,200,0.5); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
-}
-.scroll-line {
-  width: 1px; height: 36px;
-  background: linear-gradient(to bottom, rgba(138,184,200,0.5), transparent);
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
 
 /* SECTIONS SHARED */
 .section { padding: 96px 2rem; }
@@ -297,13 +285,13 @@ footer { background: #0a1a27; border-top: 1px solid #2a4a5a; padding: 3.5rem 2re
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#">
-    <img src="uploads/New Logo.jpg" alt="Mentor" />
-    <span class="nav-logo-text">Mentor</span>
+    <img src="Orange.png" alt="Mentor" />
   </a>
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#how-it-works">How It Works</a>
     <a href="#who">Who It's For</a>
+    <a href="about.html">About Us</a>
     <a href="#pricing">Pricing</a>
     <a href="/cdn-cgi/l/email-protection#49212c253909242c273d263b2d203a2a2039252c3a212039672a2624">Contact</a>
     <a href="https://app.mentordiscipleship.com" class="nav-cta">Get Started</a>
@@ -314,6 +302,7 @@ footer { background: #0a1a27; border-top: 1px solid #2a4a5a; padding: 3.5rem 2re
   <a href="#features" onclick="document.getElementById('mob').classList.remove('open')">Features</a>
   <a href="#how-it-works" onclick="document.getElementById('mob').classList.remove('open')">How It Works</a>
   <a href="#who" onclick="document.getElementById('mob').classList.remove('open')">Who It's For</a>
+  <a href="about.html" onclick="document.getElementById('mob').classList.remove('open')">About Us</a>
   <a href="#pricing" onclick="document.getElementById('mob').classList.remove('open')">Pricing</a>
   <a href="/cdn-cgi/l/email-protection#026a676e72426f676c766d70666b71616b726e67716a6b722c616d6f" onclick="document.getElementById('mob').classList.remove('open')">Contact</a>
   <a href="https://app.mentordiscipleship.com" class="nav-cta" style="text-align:center;border:none">Start for Free →</a>
@@ -324,7 +313,7 @@ footer { background: #0a1a27; border-top: 1px solid #2a4a5a; padding: 3.5rem 2re
   <div class="hero-rings"></div>
   <div class="hero-grid"></div>
   <div class="hero-content fade in">
-    <div class="hero-mark"><img src="uploads/New Logo.jpg" alt="Mentor compass mark" /></div>
+    <div class="hero-mark"><img src="Orange%20Logo.png" alt="Mentor compass mark" /></div>
     <p class="hero-eyebrow">Faith-Based Discipleship Platform</p>
     <h1 class="hero-h1">One platform.<br /><em>Every tool</em> your ministry needs.</h1>
     <p class="hero-sub">Built for churches, camps, and schools — Mentor brings mentor relationships, Bible study, prayer, journaling, and growth tracking into one place.</p>
@@ -334,7 +323,6 @@ footer { background: #0a1a27; border-top: 1px solid #2a4a5a; padding: 3.5rem 2re
       <a href="/cdn-cgi/l/email-protection#e68e838a96a68b8388928994828f95858f968a83958e8f96c885898b" class="btn-s">Contact Us</a>
     </div>
   </div>
-  <div class="scroll-hint"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 
 <!-- FEATURES -->
@@ -492,7 +480,7 @@ footer { background: #0a1a27; border-top: 1px solid #2a4a5a; padding: 3.5rem 2re
       <div class="price-card">
         <div class="price-name">Pro Individual</div>
         <div class="price-who">For personal discipleship &amp; independent mentors</div>
-        <div class="price-amt"><sup>$</sup>4<span>.99 / mo</span></div>
+        <div class="price-amt">TBD</div>
         <div class="price-note">Per person · Billed monthly</div>
         <ul class="price-list">
           <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Mentor/mentee relationship tools</li>
@@ -507,7 +495,7 @@ footer { background: #0a1a27; border-top: 1px solid #2a4a5a; padding: 3.5rem 2re
         <div class="price-badge">Most Popular</div>
         <div class="price-name">Organization</div>
         <div class="price-who">For churches, camps, and schools</div>
-        <div class="price-amt"><sup>$</sup>3<span> / user / mo</span></div>
+        <div class="price-amt">TBD</div>
         <div class="price-note">Minimum 10 users · Billed monthly</div>
         <ul class="price-list">
           <li><span class="chk"><svg viewBox="0 0 12 12" fill="none" stroke="#f07820" stroke-width="2.2"><polyline points="2,6 5,9 10,3"/></svg></span>Everything in Pro Individual</li>
@@ -543,8 +531,7 @@ footer { background: #0a1a27; border-top: 1px solid #2a4a5a; padding: 3.5rem 2re
     <div class="foot-top">
       <div class="foot-brand">
         <a class="nav-logo" href="#">
-          <img src="uploads/New Logo.jpg" alt="Mentor" style="height:30px;width:30px;" />
-          <span class="nav-logo-text" style="font-size:1rem;">Mentor</span>
+          <img src="Orange%20Logo.png" alt="Mentor" style="height:30px;width:30px;" />
         </a>
         <p class="foot-brand-desc">A faith-based discipleship platform for churches, camps, and schools. Built to help communities walk together in faith.</p>
       </div>
@@ -561,6 +548,7 @@ footer { background: #0a1a27; border-top: 1px solid #2a4a5a; padding: 3.5rem 2re
       <div>
         <div class="foot-col-label">Company</div>
         <ul class="foot-links">
+          <li><a href="about.html">About Us</a></li>
           <li><a href="/cdn-cgi/l/email-protection#066e636a76466b6368726974626f75656f766a63756e6f762865696b">Contact Us</a></li>
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>

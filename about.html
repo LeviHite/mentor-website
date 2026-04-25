@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Mentor</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0d2030;
+    --navy-mid: #1e3a4a;
+    --navy-light: #2a4a5a;
+    --orange: #f07820;
+    --orange-dim: #c4601a;
+    --text: #e8f2f5;
+    --muted: #8ab8c8;
+    --muted2: #5a7e8a;
+    --border: rgba(42,74,90,0.7);
+  }
+  body {
+    background: var(--navy);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+  }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 0 2.5rem; height: 96px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    background: rgba(13,32,48,0.95);
+    backdrop-filter: blur(14px);
+  }
+  .nav-logo { display: flex; align-items: center; text-decoration: none; }
+  .nav-logo img { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; }
+  .nav-back {
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--orange); }
+  .hero {
+    padding: 9rem 2rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 20%, rgba(30,58,74,0.75) 0%, transparent 70%),
+      var(--navy);
+  }
+  .hero-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900; letter-spacing: -0.02em; line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    max-width: 700px; margin: 0 auto;
+    color: var(--muted); font-size: 1rem;
+  }
+  .content {
+    max-width: 1080px; margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+  }
+  .section-title {
+    font-size: 1.5rem; font-weight: 800; letter-spacing: -0.01em;
+    margin-bottom: 0.6rem;
+  }
+  .section-copy {
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+  .founders-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+  .founder-card {
+    background: var(--navy-mid);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .founder-name {
+    font-size: 1.25rem; font-weight: 800;
+    margin-bottom: 0.2rem;
+  }
+  .founder-role {
+    color: var(--orange);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .founder-meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+  .founder-bio {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .edit-note {
+    background: rgba(240,120,32,0.1);
+    border: 1px solid rgba(240,120,32,0.35);
+    color: #ffdcbf;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .extra-grid {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+  }
+  .extra-card {
+    background: var(--navy-mid);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .extra-card h3 {
+    font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem;
+  }
+  .extra-card p {
+    color: var(--muted);
+    font-size: 0.93rem;
+  }
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem;
+    text-align: center;
+    color: var(--muted2);
+    font-size: 0.8rem;
+  }
+  @media (max-width: 900px) {
+    nav { padding: 0 1.25rem; }
+    .founders-grid, .extra-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="Orange.png" alt="Mentor">
+  </a>
+  <a href="index.html" class="nav-back">← Back to home</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-label">Our Story</div>
+  <h1>About Mentor</h1>
+  <p>Meet the people behind Mentor. This page is set up so Wes and Levi can quickly plug in bios, ministry background, and contact info.</p>
+</header>
+
+<main class="content">
+  <h2 class="section-title">Founders</h2>
+  <p class="section-copy">Use these cards to share who you are, your ministry heart, and why you built Mentor.</p>
+
+  <section class="founders-grid">
+    <article class="founder-card">
+      <h3 class="founder-name">Wes [Last Name]</h3>
+      <p class="founder-role">Co-Founder</p>
+      <p class="founder-meta">Location: [City, State] · Church/Ministry: [Name]</p>
+      <p class="founder-bio">Write Wes's bio here. Include ministry background, leadership focus, and what he is passionate about helping churches and mentors accomplish with this platform.</p>
+    </article>
+
+    <article class="founder-card">
+      <h3 class="founder-name">Levi [Last Name]</h3>
+      <p class="founder-role">Co-Founder</p>
+      <p class="founder-meta">Location: [City, State] · Church/Ministry: [Name]</p>
+      <p class="founder-bio">Write Levi's bio here. Add testimony, product vision, and the mission behind building tools that make discipleship easier to lead and sustain in real communities.</p>
+    </article>
+  </section>
+
+  <div class="edit-note">
+    Quick edit guide: replace bracketed placeholders like [Last Name], [City, State], and [Name]. You can also swap these cards for photos, social links, or email buttons anytime.
+  </div>
+
+  <section class="extra-grid">
+    <article class="extra-card">
+      <h3>Our Mission</h3>
+      <p>Add a short mission statement about helping people walk with Jesus through intentional discipleship, mentorship, and community.</p>
+    </article>
+    <article class="extra-card">
+      <h3>What We Believe</h3>
+      <p>Add a simple beliefs summary (Scripture, prayer, mentorship, local church partnership) to help visitors understand your foundation.</p>
+    </article>
+  </section>
+</main>
+
+<footer>
+  © 2026 Mentor. All rights reserved.
+</footer>
+
+</body>
+</html>
