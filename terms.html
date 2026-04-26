@@ -4,52 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service — Mentor</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --gold: #C9A84C; --gold-dim: #8B6F32; --bg: #0A0A08; --bg-surface: #111110;
-    --bg-card: #161614; --text-primary: #F0EDE6; --text-secondary: #9A9488;
-    --text-muted: #5A5650; --border: rgba(201, 168, 76, 0.12); --border-mid: rgba(201, 168, 76, 0.22);
+    --navy: #0d2030;
+    --navy-mid: #1e3a4a;
+    --navy-light: #2a4a5a;
+    --orange: #f07820;
+    --orange-dim: #c4601a;
+    --text: #e8f2f5;
+    --muted: #8ab8c8;
+    --muted2: #5a7e8a;
+    --border: rgba(42,74,90,0.7);
+    --border-mid: rgba(240,120,32,0.2);
   }
   html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text-primary); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.8; font-size: 16px; min-height: 100vh; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.25rem 3rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); background: rgba(10, 10, 8, 0.92); backdrop-filter: blur(12px); }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--gold); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; }
-  .nav-back { font-size: 0.75rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
-  .nav-back:hover { color: var(--gold); }
-  .hero { padding: 9rem 3rem 5rem; max-width: 860px; margin: 0 auto; border-bottom: 1px solid var(--border); }
-  .hero-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 1.5rem; }
-  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 300; line-height: 1.05; color: var(--text-primary); margin-bottom: 1.5rem; }
-  .hero-meta { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.06em; }
-  .hero-meta span { color: var(--text-secondary); }
-  .content-wrapper { max-width: 860px; margin: 0 auto; padding: 0 3rem 6rem; display: grid; grid-template-columns: 220px 1fr; gap: 5rem; align-items: start; }
+  body { background: var(--navy); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400; line-height: 1.8; font-size: 16px; min-height: 100vh; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 2.5rem; height: 96px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); background: rgba(13,32,48,0.95); backdrop-filter: blur(14px); }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo img { height: 98px; width: 98px; object-fit: cover; border-radius: 50%; }
+  .nav-back { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-back:hover { color: var(--orange); }
+  .hero { padding: 9rem 3rem 4rem; max-width: 860px; margin: 0 auto; border-bottom: 1px solid var(--border); }
+  .hero-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.25rem; }
+  .hero h1 { font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; color: var(--text); margin-bottom: 1.25rem; }
+  .hero-meta { font-size: 0.8rem; color: var(--muted2); letter-spacing: 0.06em; }
+  .hero-meta span { color: var(--muted); }
+  .content-wrapper { max-width: 860px; margin: 0 auto; padding: 0 3rem 6rem; display: grid; grid-template-columns: 210px 1fr; gap: 5rem; align-items: start; }
   .toc { position: sticky; top: 6rem; padding-top: 4rem; }
-  .toc-title { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.25rem; }
-  .toc a { display: block; font-size: 0.78rem; font-weight: 400; color: var(--text-muted); text-decoration: none; padding: 0.3rem 0; padding-left: 0.75rem; border-left: 1px solid var(--border); transition: color 0.2s, border-color 0.2s; line-height: 1.5; }
-  .toc a:hover { color: var(--gold); border-left-color: var(--gold-dim); }
+  .toc-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted2); margin-bottom: 1.25rem; }
+  .toc a { display: block; font-size: 0.78rem; color: var(--muted2); text-decoration: none; padding: 0.3rem 0 0.3rem 0.75rem; border-left: 1px solid var(--border); transition: color 0.2s, border-color 0.2s; line-height: 1.5; }
+  .toc a:hover { color: var(--orange); border-left-color: var(--orange); }
   .policy-body { padding-top: 4rem; }
   .section { margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
   .section:last-child { border-bottom: none; }
-  .section-num { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 0.75rem; }
-  .section h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1.25rem; line-height: 1.2; }
-  .section p { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.85; }
+  .section-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); opacity: 0.6; margin-bottom: 0.6rem; }
+  .section h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1.25rem; line-height: 1.2; }
+  .section p { font-size: 0.93rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.85; }
   .section p:last-child { margin-bottom: 0; }
   .section ul { list-style: none; margin: 1rem 0; }
-  .section ul li { font-size: 0.95rem; color: var(--text-secondary); padding: 0.35rem 0 0.35rem 1.25rem; position: relative; line-height: 1.7; }
-  .section ul li::before { content: ''; position: absolute; left: 0; top: 0.78rem; width: 5px; height: 1px; background: var(--gold-dim); }
-  .callout { background: var(--bg-card); border: 1px solid var(--border-mid); border-left: 2px solid var(--gold); padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; }
-  .callout p { font-size: 0.9rem; color: var(--text-secondary); margin: 0; font-style: italic; }
-  .contact-card { background: var(--bg-card); border: 1px solid var(--border-mid); padding: 2rem; margin-top: 1.5rem; }
-  .contact-card p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem; }
-  .contact-card a { color: var(--gold); text-decoration: none; }
+  .section ul li { font-size: 0.93rem; color: var(--muted); padding: 0.35rem 0 0.35rem 1.25rem; position: relative; line-height: 1.7; }
+  .section ul li::before { content: ''; position: absolute; left: 0; top: 0.82rem; width: 5px; height: 1px; background: var(--orange); opacity: 0.5; }
+  .callout { background: var(--navy-mid); border: 1px solid var(--border-mid); border-left: 2px solid var(--orange); padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+  .callout p { font-size: 0.9rem; color: var(--muted); margin: 0; font-style: italic; }
+  .contact-card { background: var(--navy-mid); border: 1px solid var(--border); padding: 2rem; margin-top: 1.5rem; border-radius: 8px; }
+  .contact-card p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .contact-card a { color: var(--orange); text-decoration: none; }
   .contact-card a:hover { text-decoration: underline; text-underline-offset: 3px; }
   footer { border-top: 1px solid var(--border); padding: 2.5rem 3rem; max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-  footer p { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.06em; }
-  footer a { font-size: 0.75rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
-  footer a:hover { color: var(--gold); }
+  footer p { font-size: 0.75rem; color: var(--muted2); letter-spacing: 0.06em; }
+  footer a { font-size: 0.75rem; color: var(--muted2); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
+  footer a:hover { color: var(--orange); }
+  .section a { color: var(--orange); text-decoration: none; }
+  .section a:hover { text-decoration: underline; }
   @media (max-width: 700px) {
-    nav { padding: 1rem 1.5rem; }
+    nav { padding: 0 1.5rem; }
     .hero { padding: 7rem 1.5rem 3rem; }
     .content-wrapper { grid-template-columns: 1fr; gap: 0; padding: 0 1.5rem 4rem; }
     .toc { display: none; }
@@ -60,8 +69,10 @@
 <body>
 
 <nav>
-  <a href="/" class="nav-logo">Mentor</a>
-  <a href="/" class="nav-back">← Back to home</a>
+  <a href="index.html" class="nav-logo">
+    <img src="Orange.png" alt="Mentor" />
+  </a>
+  <a href="index.html" class="nav-back">← Back to home</a>
 </nav>
 
 <div class="hero">
@@ -112,7 +123,7 @@
     <div class="section" id="accounts">
       <div class="section-num">03</div>
       <h2>Accounts</h2>
-      <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You agree to notify us immediately at <a href="mailto:help@mentordiscipleship.com" style="color: var(--gold); text-decoration: none;">help@mentordiscipleship.com</a> if you suspect unauthorized access.</p>
+      <p>You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. You agree to notify us immediately at <a href="mailto:help@mentordiscipleship.com">help@mentordiscipleship.com</a> if you suspect unauthorized access.</p>
       <p>You may not share your account with others or create accounts on behalf of someone else without their explicit consent.</p>
     </div>
 
@@ -183,7 +194,7 @@
       <h2>Contact</h2>
       <p>Questions about these terms? We're happy to help.</p>
       <div class="contact-card">
-        <p><strong style="color: var(--text-primary); font-weight: 500;">Mentor Discipleship</strong></p>
+        <p><strong style="color: var(--text); font-weight: 500;">Mentor Discipleship</strong></p>
         <p>Email: <a href="mailto:help@mentordiscipleship.com">help@mentordiscipleship.com</a></p>
         <p>Website: <a href="https://mentordiscipleship.com">mentordiscipleship.com</a></p>
       </div>
@@ -194,7 +205,7 @@
 
 <footer>
   <p>© 2026 Mentor Discipleship. All rights reserved.</p>
-  <a href="/">mentordiscipleship.com</a>
+  <a href="index.html">mentordiscipleship.com</a>
 </footer>
 
 </body>
