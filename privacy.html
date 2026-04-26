@@ -6,58 +6,157 @@
 <title>Privacy Policy — Mentor</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
     --navy: #0d2030;
     --navy-mid: #1e3a4a;
     --navy-light: #2a4a5a;
     --orange: #f07820;
-    --orange-dim: #c4601a;
     --text: #e8f2f5;
     --muted: #8ab8c8;
     --muted2: #5a7e8a;
     --border: rgba(42,74,90,0.7);
-    --border-mid: rgba(240,120,32,0.2);
+    --border-orange: rgba(240,120,32,0.2);
   }
+
   html { scroll-behavior: smooth; }
-  body { background: var(--navy); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400; line-height: 1.8; font-size: 16px; min-height: 100vh; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 2.5rem; height: 68px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); background: rgba(13,32,48,0.95); backdrop-filter: blur(14px); }
+
+  body {
+    background: var(--navy);
+    color: var(--text);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+    font-size: 16px;
+    min-height: 100vh;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 0 2.5rem; height: 68px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    background: rgba(13,32,48,0.95);
+    backdrop-filter: blur(14px);
+  }
+
   .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
   .nav-logo img { height: 34px; width: 34px; object-fit: cover; border-radius: 50%; }
   .nav-logo-text { font-size: 1rem; font-weight: 900; letter-spacing: 0.14em; color: var(--text); text-transform: uppercase; }
-  .nav-back { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+
+  .nav-back {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
   .nav-back:hover { color: var(--orange); }
-  .hero { padding: 9rem 3rem 4rem; max-width: 860px; margin: 0 auto; border-bottom: 1px solid var(--border); }
-  .hero-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.25rem; }
-  .hero h1 { font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; color: var(--text); margin-bottom: 1.25rem; }
+
+  .hero {
+    padding: 9rem 3rem 4rem;
+    max-width: 860px; margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-label {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--orange); margin-bottom: 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+    font-weight: 900; line-height: 1.1; letter-spacing: -0.02em;
+    color: var(--text); margin-bottom: 1.25rem;
+  }
+
   .hero-meta { font-size: 0.8rem; color: var(--muted2); letter-spacing: 0.06em; }
   .hero-meta span { color: var(--muted); }
-  .content-wrapper { max-width: 860px; margin: 0 auto; padding: 0 3rem 6rem; display: grid; grid-template-columns: 210px 1fr; gap: 5rem; align-items: start; }
+
+  .content-wrapper {
+    max-width: 860px; margin: 0 auto; padding: 0 3rem 6rem;
+    display: grid; grid-template-columns: 210px 1fr;
+    gap: 5rem; align-items: start;
+  }
+
   .toc { position: sticky; top: 6rem; padding-top: 4rem; }
-  .toc-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted2); margin-bottom: 1.25rem; }
-  .toc a { display: block; font-size: 0.78rem; color: var(--muted2); text-decoration: none; padding: 0.3rem 0 0.3rem 0.75rem; border-left: 1px solid var(--border); transition: color 0.2s, border-color 0.2s; line-height: 1.5; }
+
+  .toc-title {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--muted2); margin-bottom: 1.25rem;
+  }
+
+  .toc a {
+    display: block; font-size: 0.78rem; color: var(--muted2);
+    text-decoration: none; padding: 0.3rem 0 0.3rem 0.75rem;
+    border-left: 1px solid var(--border);
+    transition: color 0.2s, border-color 0.2s; line-height: 1.5;
+  }
   .toc a:hover { color: var(--orange); border-left-color: var(--orange); }
+
   .policy-body { padding-top: 4rem; }
-  .section { margin-bottom: 3.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
+
+  .section {
+    margin-bottom: 3.5rem; padding-bottom: 3.5rem;
+    border-bottom: 1px solid var(--border);
+  }
   .section:last-child { border-bottom: none; }
-  .section-num { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); opacity: 0.6; margin-bottom: 0.6rem; }
-  .section h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; color: var(--text); margin-bottom: 1.25rem; line-height: 1.2; }
-  .section p { font-size: 0.93rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.85; }
+
+  .section-num {
+    font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--orange); opacity: 0.6; margin-bottom: 0.6rem;
+  }
+
+  .section h2 {
+    font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em;
+    color: var(--text); margin-bottom: 1.25rem; line-height: 1.2;
+  }
+
+  .section p {
+    font-size: 0.93rem; color: var(--muted);
+    margin-bottom: 1rem; line-height: 1.85;
+  }
   .section p:last-child { margin-bottom: 0; }
+
   .section ul { list-style: none; margin: 1rem 0; }
-  .section ul li { font-size: 0.93rem; color: var(--muted); padding: 0.35rem 0 0.35rem 1.25rem; position: relative; line-height: 1.7; }
-  .section ul li::before { content: ''; position: absolute; left: 0; top: 0.82rem; width: 5px; height: 1px; background: var(--orange); opacity: 0.5; }
-  .callout { background: var(--navy-mid); border: 1px solid var(--border-mid); border-left: 2px solid var(--orange); padding: 1.25rem 1.5rem; margin: 1.5rem 0; border-radius: 0 6px 6px 0; }
+  .section ul li {
+    font-size: 0.93rem; color: var(--muted);
+    padding: 0.35rem 0 0.35rem 1.25rem;
+    position: relative; line-height: 1.7;
+  }
+  .section ul li::before {
+    content: ''; position: absolute; left: 0; top: 0.82rem;
+    width: 5px; height: 1px; background: var(--orange); opacity: 0.5;
+  }
+
+  .callout {
+    background: var(--navy-mid);
+    border: 1px solid var(--border-orange);
+    border-left: 2px solid var(--orange);
+    padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    border-radius: 0 6px 6px 0;
+  }
   .callout p { font-size: 0.9rem; color: var(--muted); margin: 0; font-style: italic; }
-  .contact-card { background: var(--navy-mid); border: 1px solid var(--border); padding: 2rem; margin-top: 1.5rem; border-radius: 8px; }
+
+  .contact-card {
+    background: var(--navy-mid); border: 1px solid var(--border);
+    padding: 2rem; margin-top: 1.5rem; border-radius: 8px;
+  }
   .contact-card p { font-size: 0.9rem; color: var(--muted); margin-bottom: 0.5rem; }
   .contact-card a { color: var(--orange); text-decoration: none; }
   .contact-card a:hover { text-decoration: underline; text-underline-offset: 3px; }
-  footer { border-top: 1px solid var(--border); padding: 2.5rem 3rem; max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+
+  .section a { color: var(--orange); text-decoration: none; }
+  .section a:hover { text-decoration: underline; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2.5rem 3rem;
+    max-width: 860px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
   footer p { font-size: 0.75rem; color: var(--muted2); letter-spacing: 0.06em; }
   footer a { font-size: 0.75rem; color: var(--muted2); text-decoration: none; letter-spacing: 0.06em; transition: color 0.2s; }
   footer a:hover { color: var(--orange); }
-  .section a { color: var(--orange); text-decoration: none; }
-  .section a:hover { text-decoration: underline; }
+
   @media (max-width: 700px) {
     nav { padding: 0 1.5rem; }
     .hero { padding: 7rem 1.5rem 3rem; }
@@ -71,7 +170,7 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="uploads/New Logo.jpg" alt="Mentor" />
+    <img src="uploads/New Logo.jpg" alt="Mentor" onerror="this.style.display='none'" />
     <span class="nav-logo-text">Mentor</span>
   </a>
   <a href="index.html" class="nav-back">← Back to home</a>
@@ -166,7 +265,7 @@
         <li>Export: request your data in a portable format</li>
         <li>Opt-out: disable push notifications at any time in your browser or device settings</li>
       </ul>
-      <p>To exercise any of these rights, email us at <a href="/cdn-cgi/l/email-protection#85e9e0f3ecc5e8e0ebf1eaf7e1ecf6e6ecf5e9e0f6edecf5abe6eae8" style="color: var(--gold); text-decoration: none;"><span class="__cf_email__" data-cfemail="4c20293a250c21292238233e28253f2f253c20293f24253c622f2321">[email&#160;protected]</span></a>. We will respond within 30 days.</p>
+      <p>To exercise any of these rights, email us at <a href="mailto:levi@mentordiscipleship.com">levi@mentordiscipleship.com</a>. We will respond within 30 days.</p>
     </div>
 
     <div class="section" id="children">
@@ -200,8 +299,8 @@
       <h2>Contact</h2>
       <p>Questions about this policy or your data? We're a small team and we read every email.</p>
       <div class="contact-card">
-        <p><strong style="color: var(--text-primary); font-weight: 500;">Mentor Discipleship</strong></p>
-        <p>Email: <a href="/cdn-cgi/l/email-protection#026e67746b426f676c766d70666b71616b726e67716a6b722c616d6f"><span class="__cf_email__" data-cfemail="640801120d2409010a100b16000d17070d140801170c0d144a070b09">[email&#160;protected]</span></a></p>
+        <p><strong style="color: var(--text); font-weight: 600;">Mentor Discipleship</strong></p>
+        <p>Email: <a href="mailto:levi@mentordiscipleship.com">levi@mentordiscipleship.com</a></p>
         <p>Website: <a href="https://mentordiscipleship.com">mentordiscipleship.com</a></p>
       </div>
     </div>
@@ -211,8 +310,8 @@
 
 <footer>
   <p>© 2026 Mentor Discipleship. All rights reserved.</p>
-  <a href="/">mentordiscipleship.com</a>
+  <a href="index.html">mentordiscipleship.com</a>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</body>
 </html>
