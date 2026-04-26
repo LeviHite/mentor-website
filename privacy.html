@@ -20,9 +20,10 @@
   }
   html { scroll-behavior: smooth; }
   body { background: var(--navy); color: var(--text); font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 400; line-height: 1.8; font-size: 16px; min-height: 100vh; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 2.5rem; height: 96px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); background: rgba(13,32,48,0.95); backdrop-filter: blur(14px); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 2.5rem; height: 68px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); background: rgba(13,32,48,0.95); backdrop-filter: blur(14px); }
   .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-logo img { height: 98px; width: 98px; object-fit: cover; border-radius: 50%; }
+  .nav-logo img { height: 34px; width: 34px; object-fit: cover; border-radius: 50%; }
+  .nav-logo-text { font-size: 1rem; font-weight: 900; letter-spacing: 0.14em; color: var(--text); text-transform: uppercase; }
   .nav-back { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
   .nav-back:hover { color: var(--orange); }
   .hero { padding: 9rem 3rem 4rem; max-width: 860px; margin: 0 auto; border-bottom: 1px solid var(--border); }
@@ -70,7 +71,8 @@
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="Orange.png" alt="Mentor" />
+    <img src="uploads/New Logo.jpg" alt="Mentor" />
+    <span class="nav-logo-text">Mentor</span>
   </a>
   <a href="index.html" class="nav-back">← Back to home</a>
 </nav>
